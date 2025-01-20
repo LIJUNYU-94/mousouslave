@@ -1,0 +1,82 @@
+"use client";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import data from "@/src/mousouslave.json";
+import { useSong } from "./SongContext";
+import { useState, useEffect } from "react";
+import { createContext, useContext, ReactNode } from "react";
+const songs = data;
+const songlist = songs
+  .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
+  .sort((a, b) => Number(a.rank) - Number(b.rank)); // rank 昇順ソート
+interface Song {
+  id: number;
+  name: string;
+  rank: string;
+}
+
+interface SongListProps {
+  songlist: Song[];
+}
+function MenuBtn() {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const handleClick = (menuName: string) => {
+    setActiveMenu((prev) => (prev === menuName ? null : menuName)); // クリックしたボタンのメニューを開閉
+  };
+  const { selectedSongName, setSelectedSongName } = useSong();
+  const pathname = usePathname();
+  const handleSongSelect = (songName: string) => {
+    setSelectedSongName(songName); // 曲をセット
+    setActiveMenu(null); // メニューを閉じる
+  };
+
+  return (
+    <>
+      <div className="absolute top-[3vh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
+        <p
+          onClick={() => handleClick("songlist")}
+          className="h-fit text-center"
+        >
+          曲リスト
+        </p>
+      </div>
+
+      {pathname === "/call" && (
+        <div className="absolute top-[3vh] left-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-slate-700 text-white">
+          <p onClick={() => handleClick("mode")} className="h-fit text-center">
+            モード
+          </p>
+        </div>
+      )}
+      {activeMenu === "songlist" && (
+        <div className="absolute top-[10vh] right-[5%] h-[80vh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
+          <p className="tracking-wider">♬妄想slave曲リスト</p>
+          <ul className="ml-[25%] mt-[5vh] tracking-wider flex flex-col justify-between h-[65vh]">
+            {songlist.map((song, index) => (
+              <li
+                key={song.id}
+                onClick={() => handleSongSelect(song.name)}
+                className={`transition-all duration-300 `}
+              >
+                {index + 1}.{song.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+      {activeMenu === "mode" && (
+        <div className="absolute top-[10vh] left-[5%] h-[40vh] w-[90%] bg-gray-200 p-4 shadow-lg rounded text-xl">
+          <p>⚙️ モード設定メニュー</p>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default function Menu() {
+  return (
+    <>
+      <MenuBtn></MenuBtn>
+    </>
+  );
+}

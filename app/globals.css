@@ -19,3 +19,18 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+  * {
+    @apply m-0 p-0;
+    @apply font-sans;
+    @apply box-border;
+  }
+  html,
+  body {
+    @apply overflow-hidden;
+  }
+  a {
+    @apply no-underline;
+  }
+}
