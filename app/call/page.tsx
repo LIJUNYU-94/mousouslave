@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import data from "@/src/mousouslave.json";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
@@ -96,15 +96,15 @@ function SongsContent() {
   );
 }
 export default function call() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
+  // const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsMobile(window.innerWidth < 640);
+  //   };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   return (
     <SongProvider>

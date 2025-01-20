@@ -7,11 +7,11 @@ const songs = data;
 const songlist = songs
   .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
   .sort((a, b) => Number(a.rank) - Number(b.rank)); // rank 昇順ソート
-interface Song {
-  id: number;
-  name: string;
-  rank: string;
-}
+// interface Song {
+//   id: number;
+//   name: string;
+//   rank: string;
+// }
 function MenuBtn() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const handleClick = (menuName: string) => {

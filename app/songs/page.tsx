@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Menu from "../components/menu";
 import { SongProvider, useSong } from "../components/SongContext";
 import data from "../../src/mousouslave.json";
@@ -10,9 +9,9 @@ function SongsContent() {
   //   ? data.find((song) => song.name === selectedSongName)?.lyrics ||
   //     "歌詞が見つかりません"
   //   : "";
-  const now = selectedSongName
-    ? data.findIndex((song) => song.name === selectedSongName)
-    : -1; // 該当する曲がなければ -1 を返す
+  // const now = selectedSongName
+  //   ? data.findIndex((song) => song.name === selectedSongName)
+  //   : -1; // 該当する曲がなければ -1 を返す
 
   return (
     <div>
