@@ -1,6 +1,4 @@
-import Image from "next/image";
 import Link from "next/link";
-import { SongProvider } from "./components/SongContext";
 function part(x: number) {
   const data = [
     {

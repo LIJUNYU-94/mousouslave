@@ -1,6 +1,5 @@
 "use client";
-import { createContext, useContext, useState, ReactNode } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import data from "@/src/mousouslave.json";
 import { useEffect } from "react";
 import Menu from "../components/menu";

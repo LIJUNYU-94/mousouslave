@@ -1,10 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
 import { useState, useEffect } from "react";
-import { createContext, useContext, ReactNode } from "react";
 const songs = data;
 const songlist = songs
   .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
