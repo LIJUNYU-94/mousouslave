@@ -1,6 +1,6 @@
 "use client";
 import Menu from "../components/menu";
-import { SongProvider, useSong } from "../components/SongContext";
+import { SongProvider } from "../components/SongContext";
 // import data from "../../src/mousouslave.json";
 
 function SongsContent() {
