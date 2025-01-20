@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const songs = data;
 const songlist = songs
   .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
@@ -12,16 +12,12 @@ interface Song {
   name: string;
   rank: string;
 }
-
-interface SongListProps {
-  songlist: Song[];
-}
 function MenuBtn() {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const handleClick = (menuName: string) => {
     setActiveMenu((prev) => (prev === menuName ? null : menuName)); // クリックしたボタンのメニューを開閉
   };
-  const { selectedSongName, setSelectedSongName } = useSong();
+  const { setSelectedSongName } = useSong();
   const pathname = usePathname();
   const handleSongSelect = (songName: string) => {
     setSelectedSongName(songName); // 曲をセット
