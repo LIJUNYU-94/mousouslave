@@ -33,7 +33,4 @@ body {
   a {
     @apply no-underline;
   }
-  body {
-    @apply max-w-sm; /* または max-w-sm, max-w-md, max-w-lg, max-w-xl など */
-  }
 }
