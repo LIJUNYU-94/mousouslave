@@ -90,7 +90,7 @@ function SongsContent() {
     <>
       {/* <p className="absolute text-white">{now}</p> */}
 
-      <div className="w-full h-[max(100dvh,800px)] flex items-center justify-center bg-slate-700 ">
+      <div className="w-full h-[100dvh] flex items-center justify-center bg-slate-700 ">
         <Menu />
         <div className="h-[80vh] w-full bg-black mt-[2vh] text-white overflow-y-scroll">
           <h2 className="text-2xl mt-[2vh] text-center ">
