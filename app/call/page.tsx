@@ -26,17 +26,17 @@ interface CallItemProps {
 function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   return (
     <>
-      <div className="w-[90%] mt-[2vh] mb-[1vh] mx-auto border-white ">
+      <div className="w-[90%] mt-[2dvh] mb-[1dvh] mx-auto border-white ">
         <p className="text-xl tracking-widest text-bold">{position}</p>
         <p
-          className="relative tracking-wider text-bold ml-[15px] mt-[1vh]"
+          className="relative tracking-wider text-bold ml-[15px] mt-[1dvh]"
           onClick={onToggle}
         >
           {mix}
           <span className="absolute right-[0]">{isOpen ? "-" : "+"}</span>
         </p>
         {isOpen && (
-          <div className="tracking-wide overflow-y-scroll max-h-[30vh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px]">
+          <div className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px]">
             {mixtext.map((text, i) => (
               <p key={i}>{text}</p>
             ))}
@@ -92,8 +92,8 @@ function SongsContent() {
 
       <div className="w-full h-[100dvh] flex items-center justify-center bg-slate-700 ">
         <Menu />
-        <div className="h-[80vh] w-full bg-black mt-[2vh] text-white overflow-y-scroll">
-          <h2 className="text-2xl mt-[2vh] text-center ">
+        <div className="h-[80dvh] w-full bg-black mt-[2dvh] text-white overflow-y-scroll">
+          <h2 className="text-2xl mt-[2dvh] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>
           {mix.map((item, index) => (
