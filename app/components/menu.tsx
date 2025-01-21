@@ -26,7 +26,7 @@ function MenuBtn() {
 
   return (
     <>
-      <div className="absolute top-[3dvh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
+      <div className="absolute top-[2dvh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
         <p
           onClick={() => handleClick("songlist")}
           className="h-fit text-center"
@@ -36,7 +36,7 @@ function MenuBtn() {
       </div>
 
       {pathname === "/call" && (
-        <div className="absolute top-[3dvh] left-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-slate-700 text-white">
+        <div className="absolute top-[2dvh] left-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-slate-700 text-white">
           <p onClick={() => handleClick("mode")} className="h-fit text-center">
             モード
           </p>
