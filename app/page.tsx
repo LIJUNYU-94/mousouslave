@@ -3,22 +3,22 @@ function part(x: number) {
   const data = [
     {
       name: "曲",
-      pic: "era-3.png",
+      pic: "era-3.pn",
       alt: "lipi",
     },
     {
       name: "コール",
-      pic: "era-3.png",
+      pic: "era-3.pn",
       alt: "risa",
     },
     {
       name: "各公式リンク",
-      pic: "era-3.png",
+      pic: "era-3.pn",
       alt: "kuiru",
     },
     {
       name: "各非公式リンク",
-      pic: "era-3.png",
+      pic: "era-3.pn",
       alt: "kuiru",
     },
     {
