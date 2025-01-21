@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
 import data from "@/src/mousouslave.json";
-// import { useEffect } from "react";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
+
 const callMapping: Record<string, string> = {
   Introduction: "開幕",
   PreChorus: "サビ前",
@@ -17,21 +17,26 @@ const callMapping: Record<string, string> = {
   Outro: "終幕",
 };
 interface CallItemProps {
+  position: string[] | string[];
   mix: string[];
   mixtext: string[];
   isOpen: boolean;
   onToggle: () => void;
 }
-function CallItem({ mix, mixtext, isOpen, onToggle }: CallItemProps) {
+function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   return (
     <>
-      <div className="w-[90%] mt-[1vh] mb-[0.5vh] mx-auto border-white overflow-y-scroll">
-        <p className="relative" onClick={onToggle}>
+      <div className="w-[90%] mt-[2vh] mb-[1vh] mx-auto border-white ">
+        <p className="text-xl tracking-widest text-bold">{position}</p>
+        <p
+          className="relative tracking-wider text-bold ml-[15px] mt-[1vh]"
+          onClick={onToggle}
+        >
           {mix}
           <span className="absolute right-[0]">{isOpen ? "-" : "+"}</span>
         </p>
         {isOpen && (
-          <div className="text-xl overflow-y-scroll max-h-[50vh]">
+          <div className="tracking-wide overflow-y-scroll max-h-[30vh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px]">
             {mixtext.map((text, i) => (
               <p key={i}>{text}</p>
             ))}
@@ -56,7 +61,11 @@ function SongsContent() {
   const mixlist: string[][] = Object.entries(callMapping)
     .filter(([key]) => typeof call[key] === "string") // `call[key]` が `string` の場合のみ取得
     .map(([key]) => [call[key] as string]); // `mixname` の値をリスト形式にする
-
+  const positions = data[now]?.call
+    ? Object.keys(data[now].call)
+        .filter((call): call is keyof typeof callMapping => call in callMapping)
+        .map((call) => callMapping[call])
+    : [];
   const callfull: Record<string, string[]> =
     now !== -1
       ? Object.fromEntries(
@@ -69,6 +78,8 @@ function SongsContent() {
 
   const mixtext: string[][] = Object.values(callfull);
   const mix = mixlist.map((mix, index) => ({
+    name: data[now].name,
+    position: positions[index] || [],
     mix: mix,
     mixtext: mixtext[index] || [],
   }));
@@ -77,13 +88,20 @@ function SongsContent() {
     setActive((prev) => (prev === index ? null : index));
   return (
     <>
-      <p className="absolute text-white">{now}</p>
-      <div className="w-full h-full flex items-center justify-center bg-slate-700">
+      {/* <p className="absolute text-white">{now}</p> */}
+
+      <div className="w-full h-full flex items-center justify-center bg-slate-700 ">
         <Menu />
-        <div className="h-[80vh] w-full bg-black mt-[2vh] text-white ">
+        <div className="h-[80vh] w-full bg-black mt-[2vh] text-white overflow-y-scroll">
+          <h2 className="text-2xl mt-[2vh] text-center ">
+            {data[now]?.name || "曲を選んでください"}
+          </h2>
           {mix.map((item, index) => (
             <CallItem
               key={index}
+              position={
+                Array.isArray(item.position) ? item.position : [item.position]
+              }
               mix={item.mix}
               mixtext={item.mixtext}
               isOpen={active === index}
