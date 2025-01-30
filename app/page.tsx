@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useSmallScreen } from "./components/smallscreen";
+import { SmallScreen } from "./components/smallscreen";
 function part(x: number) {
   const data = [
     {
@@ -41,7 +41,7 @@ function part(x: number) {
   );
 }
 export default function Home() {
-  const smallscreen = useSmallScreen();
+  const smallscreen = SmallScreen();
   return (
     <>
       <main className="h-[100dvh] bg-slate-400/80 max-w-[500px]">

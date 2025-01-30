@@ -4,7 +4,7 @@ import data from "@/src/mousouslave.json";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
-import { useSmallScreen } from "../components/smallscreen";
+import { SmallScreen } from "../components/smallscreen";
 
 const callMapping: Record<string, string> = {
   Introduction: "開幕",
@@ -48,7 +48,7 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   );
 }
 function SongsContent() {
-  const smallscreen = useSmallScreen();
+  const smallscreen = SmallScreen();
   const { selectedSongName } = useSong();
   // const lyrics = selectedSongName
   //   ? data.find((song) => song.name === selectedSongName)?.lyrics ||

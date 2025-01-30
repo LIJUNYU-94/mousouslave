@@ -2,9 +2,9 @@
 import Link from "next/link";
 import { BsYoutube } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { useSmallScreen } from "../components/smallscreen";
+import { SmallScreen } from "../components/smallscreen";
 export default function unofficials() {
-  const smallscreen = useSmallScreen();
+  const smallscreen = SmallScreen();
   return (
     <>
       <div className="h-[100dvh] max-w-[500px] bg-slate-300/80">
@@ -15,8 +15,8 @@ export default function unofficials() {
         </h1>
         <div
           className={`${
-            smallscreen ? "h-[55dvh]" : "h-[60dvh]"
-          } pt-[3dvh] flex flex-col justify-around text-left text-xl font-bold tracking-wide`}
+            smallscreen ? "h-[55dvh]" : "h-[60dvh] text-xl"
+          } pt-[3dvh] flex flex-col justify-around text-left font-bold tracking-wide`}
         >
           <Link
             href=""
