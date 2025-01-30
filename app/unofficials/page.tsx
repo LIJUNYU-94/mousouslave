@@ -1,45 +1,87 @@
 import Link from "next/link";
+import { BsYoutube } from "react-icons/bs";
+import { FaSquareXTwitter } from "react-icons/fa6";
 export default function unofficials() {
   return (
     <>
-      <div className="h-[100dvh]">
-        <h1 className="h-[10dvh] text-center pt-[5dvh] item-center text-3xl font-bold">
+      <div className="h-[100dvh] max-w-[500px] bg-slate-300/80">
+        <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center ">
+          妄想slave
+          <br />
           各非公式リンク
         </h1>
-        <div className="h-[75dvh] pt-[5dvh] flex flex-col justify-around text-left">
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
+        <div className="h-[60dvh] pt-[3dvh] flex flex-col justify-around text-left text-xl font-bold tracking-wide">
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter />
             りさちのコンカフェ屋さん
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter />
             りぴコンカフェ
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            妄想slave応援X
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> 妄想slave応援X
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <BsYoutube />
             youtube:おやじぃで
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <BsYoutube />
             youtube:みくちゃん
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <BsYoutube />
             youtube:NOVA
           </Link>
-          <p className="text-2xl text-center">関連Xタグ</p>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            りさちをりさーち
+          <p className="text-2xl text-center py-[1dvh]">関連Xタグ</p>
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> りさちをりさーち
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            指田とサシ飲み
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> 指田とサシ飲み
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            にゃごちゅーるだよ
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> にゃごちゅーるだよ
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            泥酔slave
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> 泥酔slave
           </Link>
-          <Link href="" className="w-[50%] mx-auto whitespace-nowrap">
-            妄スレ脱法MIX
+          <Link
+            href=""
+            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> 妄スレ脱法MIX
           </Link>
         </div>
         <div className="relative h-[5dvh] mt-[3dvh]">

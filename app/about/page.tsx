@@ -2,8 +2,8 @@ import Link from "next/link";
 export default function about() {
   return (
     <>
-      <div className="h-[100dvh]">
-        <h1 className="h-[10dvh] text-center pt-[5dvh] item-center text-3xl font-bold">
+      <div className="h-[100dvh] bg-black/80 max-w-[500px]">
+        <h1 className="h-[10dvh] text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           about
         </h1>
         <div className="h-[25dvh] pt-[5dvh] flex flex-col text-left">

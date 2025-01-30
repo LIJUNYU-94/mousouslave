@@ -2,43 +2,36 @@ import Link from "next/link";
 function part(x: number) {
   const data = [
     {
-      name: "曲",
-      pic: "era-3.pn",
-      alt: "lipi",
+      name: "オリジナル曲全13曲",
+      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
     },
     {
-      name: "コール",
-      pic: "era-3.pn",
-      alt: "risa",
+      name: "全13曲コール",
+      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
     },
     {
       name: "各公式リンク",
-      pic: "era-3.pn",
-      alt: "kuiru",
+      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
     },
     {
       name: "各非公式リンク",
-      pic: "era-3.pn",
-      alt: "kuiru",
+      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
     },
     {
       name: "スケジュール",
+      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
     },
     {
-      name: "about",
+      name: "about me",
+      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
     },
   ];
   return (
     <>
-      <div className="relative flex justify-center">
-        {data[x].pic && (
-          <img
-            src={data[x].pic}
-            alt={data[x].alt || "画像"}
-            className="h-[180px] w-[180px]"
-          />
-        )}
-        <p className=" text-center absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 bg-slate-700 text-white whitespace-nowrap p-2 rounded-md">
+      <div
+        className={`relative flex justify-center flex-col ${data[x].classname}`}
+      >
+        <p className="tracking-widest text-center text-white whitespace-nowrap p-2 rounded-md h-fit w-fit mx-auto px-[20px] text-xl font-bold">
           {data[x].name}
         </p>
       </div>
@@ -48,28 +41,31 @@ function part(x: number) {
 export default function Home() {
   return (
     <>
-      <main className="h-[100dvh]  items-center">
-        <h1 className="text-4xl font-bold pt-[50px] pb-[50px] text-center">
-          応援サイト
+      <main className="h-[100dvh] bg-slate-400/80 max-w-[500px]">
+        <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
+          妄想slave <br />
+          非公式応援サイト
         </h1>
-        <div className="grid grid-cols-2 grid-rows-2 gap-y-[20px]">
-          <Link href={`/songs/`}>{part(0)}</Link>
-          <Link href={`/call/`}>{part(1)}</Link>
-          <Link href={`/officials/`}>{part(2)}</Link>
-          <Link href={`/unofficials/`}>{part(3)}</Link>
+        <div className="grid grid-rows-6 gap-[0.5vh] h-[71dvh]">
+          <Link className="relative grid" href={`/songs/`}>
+            {part(0)}
+          </Link>
+          <Link className="relative grid" href={`/call/`}>
+            {part(1)}
+          </Link>
+          <Link className="relative grid" href={`/officials/`}>
+            {part(2)}
+          </Link>
+          <Link className="relative grid" href={`/unofficials/`}>
+            {part(3)}
+          </Link>
+          <Link className="relative grid" href="http://timetr.ee/p/mousouslave">
+            {part(4)}
+          </Link>
+          <Link className="relative grid" href={`/about/`}>
+            {part(5)}
+          </Link>
         </div>
-        <Link
-          href="http://timetr.ee/p/mousouslave"
-          className="text-center flex justify-center h-[100px] w-[80%] mx-auto pt-[100px]"
-        >
-          {part(4)}
-        </Link>
-        <Link
-          href={`/about/`}
-          className="text-center flex justify-center h-[100px] w-[80%] mx-auto pt-[70px]"
-        >
-          {part(5)}
-        </Link>
       </main>
     </>
   );

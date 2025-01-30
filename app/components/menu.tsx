@@ -26,7 +26,7 @@ function MenuBtn() {
 
   return (
     <>
-      <div className="absolute top-[3dvh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
+      <div className="cursor-pointer absolute top-[3dvh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
         <p
           onClick={() => handleClick("songlist")}
           className="h-fit text-center tracking-widest"
@@ -46,9 +46,9 @@ function MenuBtn() {
         </div>
       )}
       {activeMenu === "songlist" && (
-        <div className="absolute top-[10vh] right-[5%] h-[80vh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
+        <div className="absolute top-[10dvh] right-[5%] h-[80dvh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
           <p className="tracking-wider">♬妄想slave曲リスト</p>
-          <ul className="ml-[25%] mt-[5vh] tracking-wider flex flex-col justify-between h-[65vh]">
+          <ul className="ml-[25%] mt-[5dvh] tracking-wider flex flex-col justify-between h-[65vh]">
             {songlist.map((song, index) => (
               <li
                 key={song.id}
@@ -62,7 +62,7 @@ function MenuBtn() {
         </div>
       )}
       {activeMenu === "mode" && (
-        <div className="absolute top-[10vh] left-[5%] h-[40vh] w-[90%] bg-gray-200 p-4 shadow-lg rounded text-xl">
+        <div className="absolute top-[10dvh] left-[5%] h-[40dvh] w-[90%] bg-gray-200 p-4 shadow-lg rounded text-xl">
           <p>⚙️ モード設定メニュー</p>
         </div>
       )}
