@@ -5,7 +5,7 @@ export function SmallScreen() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerHeight <= 700); // iPhone SE の高さ
+      setIsSmallScreen(window.innerHeight <= 680); // iPhone SE の高さ
     };
 
     checkScreenSize(); // 初回チェック
