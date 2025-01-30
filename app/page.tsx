@@ -46,7 +46,7 @@ export default function Home() {
           妄想slave <br />
           非公式応援サイト
         </h1>
-        <div className="grid grid-rows-6 gap-[0.5vh] h-[71dvh]">
+        <div className="grid grid-rows-6 gap-[0.5vh] h-[65dvh]">
           <Link className="relative grid" href={`/songs/`}>
             {part(0)}
           </Link>
