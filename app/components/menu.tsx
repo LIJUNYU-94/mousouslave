@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
 import { useState } from "react";
+// import { SmallScreen } from "../components/smallscreen";
 const songs = data;
 const songlist = songs
   .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
@@ -23,7 +24,7 @@ function MenuBtn() {
     setSelectedSongName(songName); // 曲をセット
     setActiveMenu(null); // メニューを閉じる
   };
-
+  // const smallscreen = SmallScreen();
   return (
     <>
       <div className="cursor-pointer absolute top-[3dvh] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
@@ -46,9 +47,9 @@ function MenuBtn() {
         </div>
       )}
       {activeMenu === "songlist" && (
-        <div className="absolute top-[10dvh] right-[5%] h-[80dvh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
+        <div className="absolute top-[11.2dvh] right-[5%] h-[75dvh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
           <p className="tracking-wider">♬妄想slave曲リスト</p>
-          <ul className="ml-[25%] mt-[5dvh] tracking-wider flex flex-col justify-between h-[65vh]">
+          <ul className="ml-[25%] mt-[2dvh] tracking-wider flex flex-col justify-between h-[65dvh]">
             {songlist.map((song, index) => (
               <li
                 key={song.id}
