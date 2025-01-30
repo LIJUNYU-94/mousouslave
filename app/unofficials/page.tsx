@@ -1,7 +1,10 @@
+"use client";
 import Link from "next/link";
 import { BsYoutube } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { useSmallScreen } from "../components/smallscreen";
 export default function unofficials() {
+  const smallscreen = useSmallScreen();
   return (
     <>
       <div className="h-[100dvh] max-w-[500px] bg-slate-300/80">
@@ -10,7 +13,11 @@ export default function unofficials() {
           <br />
           各非公式リンク
         </h1>
-        <div className="h-[60dvh] pt-[3dvh] flex flex-col justify-around text-left text-xl font-bold tracking-wide">
+        <div
+          className={`${
+            smallscreen ? "h-[55dvh]" : "h-[60dvh]"
+          } pt-[3dvh] flex flex-col justify-around text-left text-xl font-bold tracking-wide`}
+        >
           <Link
             href=""
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"

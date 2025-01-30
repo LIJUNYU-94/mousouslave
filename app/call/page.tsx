@@ -4,6 +4,7 @@ import data from "@/src/mousouslave.json";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
+import { useSmallScreen } from "../components/smallscreen";
 
 const callMapping: Record<string, string> = {
   Introduction: "開幕",
@@ -47,6 +48,7 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   );
 }
 function SongsContent() {
+  const smallscreen = useSmallScreen();
   const { selectedSongName } = useSong();
   // const lyrics = selectedSongName
   //   ? data.find((song) => song.name === selectedSongName)?.lyrics ||
@@ -92,7 +94,11 @@ function SongsContent() {
 
       <div className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto">
         <Menu />
-        <div className="h-[80dvh] w-full bg-black mt-[2dvh] text-white overflow-y-scroll">
+        <div
+          className={`${
+            smallscreen ? "h-[75dvh]" : "h-[80dvh]"
+          } w-full bg-black mt-[2dvh] text-white overflow-y-scroll`}
+        >
           <h2 className="text-2xl mt-[2dvh] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>

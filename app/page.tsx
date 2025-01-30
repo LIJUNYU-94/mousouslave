@@ -1,4 +1,6 @@
+"use client";
 import Link from "next/link";
+import { useSmallScreen } from "./components/smallscreen";
 function part(x: number) {
   const data = [
     {
@@ -39,6 +41,7 @@ function part(x: number) {
   );
 }
 export default function Home() {
+  const smallscreen = useSmallScreen();
   return (
     <>
       <main className="h-[100dvh] bg-slate-400/80 max-w-[500px]">
@@ -46,7 +49,11 @@ export default function Home() {
           妄想slave <br />
           非公式応援サイト
         </h1>
-        <div className="grid grid-rows-6 gap-[0.5vh] h-[65dvh]">
+        <div
+          className={`grid grid-rows-6 gap-[0.5vh] ${
+            smallscreen ? "h-[65dvh]" : "h-[68dvh]"
+          }`}
+        >
           <Link className="relative grid" href={`/songs/`}>
             {part(0)}
           </Link>
