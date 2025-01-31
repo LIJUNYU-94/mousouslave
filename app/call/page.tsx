@@ -1,11 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import data from "@/src/mousouslave.json";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
 import { SmallScreen } from "../components/smallscreen";
-
+const reducer = (state: string, action: { type: string; payload: string }) => {
+  switch (action.type) {
+    case "SET_MODE":
+      return action.payload;
+    default:
+      return state;
+  }
+};
 const callMapping: Record<string, string> = {
   Introduction: "開幕",
   PreChorus: "サビ前",
@@ -37,7 +44,13 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
           <span className="absolute right-[0]">{isOpen ? "-" : "+"}</span>
         </p>
         {isOpen && (
-          <div className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px]">
+          <div
+            className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px] [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+          >
             {mixtext.map((text, i) => (
               <p key={i}>{text}</p>
             ))}
@@ -48,6 +61,7 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   );
 }
 function SongsContent() {
+  const [mode, dispatch] = useReducer(reducer, "check");
   const smallscreen = SmallScreen();
   const { selectedSongName } = useSong();
   // const lyrics = selectedSongName
@@ -93,27 +107,47 @@ function SongsContent() {
       {/* <p className="absolute text-white">{now}</p> */}
 
       <div className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto">
-        <Menu />
+        <Menu mode={mode} dispatch={dispatch} />
         <div
           className={`${
             smallscreen ? "h-[75dvh]" : "h-[80dvh]"
-          } w-full bg-black mt-[2dvh] text-white overflow-y-scroll`}
+          } w-full bg-black mt-[2dvh] text-white overflow-y-scroll [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500`}
         >
           <h2 className="text-2xl mt-[2dvh] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>
-          {mix.map((item, index) => (
-            <CallItem
-              key={index}
-              position={
-                Array.isArray(item.position) ? item.position : [item.position]
-              }
-              mix={item.mix}
-              mixtext={item.mixtext}
-              isOpen={active === index}
-              onToggle={() => handleToggle(index)}
-            />
-          ))}
+          {mode === "check" &&
+            mix.map((item, index) => (
+              <CallItem
+                key={index}
+                position={
+                  Array.isArray(item.position) ? item.position : [item.position]
+                }
+                mix={item.mix}
+                mixtext={item.mixtext}
+                isOpen={active === index}
+                onToggle={() => handleToggle(index)}
+              />
+            ))}
+          {mode === "practice" && <p>🎤 練習モードの画面</p>}
+          {mode === "live" && <p>🔥 LIVEモードの画面</p>}
+          {mode === "simple" &&
+            mix.map((item, index) => (
+              <CallItem
+                key={index}
+                position={
+                  Array.isArray(item.position) ? item.position : [item.position]
+                }
+                mix={item.mix}
+                mixtext={item.mixtext}
+                isOpen={active === index}
+                onToggle={() => handleToggle(index)}
+              />
+            ))}
         </div>
       </div>
     </>

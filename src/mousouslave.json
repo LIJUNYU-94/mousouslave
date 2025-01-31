@@ -3,6 +3,8 @@
     "id": 1,
     "name": "Colorful My Future",
     "rank": "10",
+    "mv": "9Lh-5xotUeQ",
+    "live": "EDivcR-6vhM",
     "call": {
       "Introduction": "スタンダード(倍速)",
       "PreChorus": "チャペアペ虎火ミョーホントゥスケ人造ファイヤファイボワイパー",
@@ -50,11 +52,13 @@
     "id": 2,
     "name": "Summer Memory",
     "rank": "3",
+    "mv": "kdLWr0kRx50",
+    "live": "x4w-9Vutytc",
     "call": {
       "Introduction": "スタンダード→園長→逆園長",
       "PostChorus": "ホグワーツ",
       "Verse": "ビスマルク口上",
-      "Interlude": "可変三連２(繊維ジャスパーのやつ)",
+      "Interlude": "可変三連２",
       "Outro": "ガチ恋キャンセルドイツ三連"
     },
     "callfull": {
@@ -64,7 +68,7 @@
         "ファイボー ワイパー ファーマー ジャスパー",
         "ホワイパー クーパー イエスクレイパー ",
         "クレイパー クーパー ホワイパー",
-        "ジャスパー ファーマー ワイパー ファイボー"
+        "ジャスパー ファーマー ワイパー ファイボー ジャージャー"
       ],
       "PostChorus": [
         "マルフォイ マルフォイ マルフォイ マルフォイ",
@@ -115,6 +119,8 @@
     "id": 3,
     "name": "Twinkle☆Stage",
     "rank": "12",
+    "mv": "IpuHsPicGe0",
+    "live": "qRR-yx0tNx4",
     "call": {
       "Introduction": "萌え萌えキュン発動スタンダード",
       "PostChorus": "ジャパン倍速",
@@ -146,6 +152,8 @@
     "id": 4,
     "name": "ほろ酔い君中毒",
     "rank": "13",
+    "mv": "nUFWqFuQmVc",
+    "live": "XkcXItEM7S8",
     "call": {
       "Introduction": "スタンダード",
       "PostChorus": "ジャパニーズ",
@@ -183,6 +191,8 @@
     "id": 5,
     "name": "めんたるのいず",
     "rank": "8",
+    "mv": "ACIIxk6JpiE",
+    "live": "mzYi7lnoG2k",
     "call": {
       "Introduction": "スタンダード",
       "PostChorus": "虎火発動 ジャパニーズ",
@@ -225,6 +235,8 @@
     "id": 6,
     "name": "エンドレスラブ",
     "rank": "5",
+    "mv": "wf5UO1cnEJ4",
+    "live": "_KpuW2aYx6k",
     "call": {
       "Introduction": "旧：ミューホントゥスケ広場+スタンダード（ワイパーまで）新：ミューホントゥスケ広場+キャプ翼キャンセルスタンダードファーマーまで",
       "PostChorus": "闇mixスロー",
@@ -260,6 +272,8 @@
     "id": 7,
     "name": "嘘つきシンドローム",
     "rank": "6",
+    "mv": "UpyB4tiQ2RQ",
+    "live": "6bFDG7HtIJ8",
     "call": {
       "Introduction": "タイガーファイヤー始動 スタンダード",
       "PostChorus": "虎火始動 ジャパニーズ",
@@ -309,6 +323,8 @@
     "id": 8,
     "name": "夏心シークレット",
     "rank": "11",
+    "mv": "7AWUOy577O0",
+    "live": "nc55spkKyag",
     "call": {
       "Introduction": "スタンダード三連（スタジャパアイヌ3連）",
       "PostChorus": "三角関数キャンセルジャパニーズ (トライアングル…しゃーいくぞ！)",
@@ -366,6 +382,8 @@
     "id": 9,
     "name": "妄想のラビリンス",
     "rank": "2",
+    "mv": "oGT29vwr9hs",
+    "live": "E2SIANV1r28",
     "call": {
       "Introduction": "スタンダードワイパーまで",
       "Chorus": "意味不あいあい(ゴキあい)",
@@ -406,6 +424,8 @@
     "id": 10,
     "name": "恋のアカシ",
     "rank": "1",
+    "mv": "ogya9Y-vRYk",
+    "live": "-48nhENHmPM",
     "call": {
       "Introduction": "ミョーホンドライバー広場（短タイガーファイヤー発動（タイタタタイタイ無し）→ジャンパー！ピンガ！ダンスファーマー",
       "PostChorus": "虎火発動（トラトラなし）→跳！海鵜！舞農場！",
@@ -471,6 +491,8 @@
     "id": 11,
     "name": "恋愛桃源郷",
     "rank": "7",
+    "mv": "QakWBpU0FCk",
+    "live": "je-XZkIcUI0",
     "call": {
       "Introduction": "スタンダード",
       "PreChorus": "スタンダードキャンセルスタンダード倍速",
@@ -527,6 +549,8 @@
     "id": 12,
     "name": "群青トリガー",
     "rank": "4",
+    "mv": "cEhkMSwOSmI",
+    "live": "BVZ876OwWm8",
     "call": {
       "Introduction": "スタンダード(出来る人はツーステも👍)",
       "PostChorus": "ジャパニーズ (出来る人はツーステも👍)",
@@ -564,6 +588,8 @@
     "id": 13,
     "name": "雪空キスシーン",
     "rank": "9",
+    "mv": "o7vHG3YDBWs",
+    "live": "q9pOKL9dfCQ",
     "call": {
       "Introduction": "スタンダード",
       "Interlude": "六花MIX"

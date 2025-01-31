@@ -22,74 +22,84 @@ export default function officials() {
           } pt-[3dvh] flex flex-col justify-around text-left font-bold tracking-wide`}
         >
           <Link
-            href=""
+            href="https://www.youtube.com/@slave9370"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center "
           >
             <BsYoutube />
             公式youtube
           </Link>
           <Link
-            href=""
+            href="https://x.com/mousou_slave
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter />
             妄想slave公式x
           </Link>
           <Link
-            href=""
+            href="https://x.com/risa_0305_
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter /> 指田りさ 公式X
           </Link>
           <Link
-            href=""
+            href="https://www.instagram.com/risa__0305_/
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaInstagramSquare />
             指田りさ instagram
           </Link>
           <Link
-            href=""
+            href="https://www.tiktok.com/@risa_2003_0305
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <AiFillTikTok />
             指田りさ tiktok
           </Link>
           <Link
-            href=""
+            href="https://x.com/ripitanebi
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter /> 神凪りぴ 公式X
           </Link>
           <Link
-            href=""
+            href="https://www.instagram.com/ripitantanmen/
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaInstagramSquare /> 神凪りぴ instagram
           </Link>
           <Link
-            href=""
+            href="https://www.tiktok.com/@ripiripitan
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <AiFillTikTok />
             神凪りぴ tiktok
           </Link>
           <Link
-            href=""
+            href="https://x.com/chekisutayasan
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter />
             先輩(スタッフ)
           </Link>
           <Link
-            href=""
+            href="https://risatishop.base.shop/
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <HiShoppingCart />
             公式baseshop
           </Link>
           <Link
-            href=""
+            href="https://x.com/SASHIDAKE
+"
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             {" "}

@@ -51,7 +51,7 @@ export default function Home() {
         </h1>
         <div
           className={`grid grid-rows-6 gap-[0.5vh] ${
-            smallscreen ? "h-[65dvh]" : "h-[71dvh]"
+            smallscreen ? "h-[65dvh]" : "h-[68dvh]"
           }`}
         >
           <Link className="relative grid" href={`/songs/`}>
