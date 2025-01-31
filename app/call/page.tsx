@@ -107,7 +107,7 @@ function SongsContent() {
       {/* <p className="absolute text-white">{now}</p> */}
 
       <div
-        className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black relative mx-auto overflow-y-scroll [&::-webkit-scrollbar]:w-2
+        className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto overflow-y-scroll [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
