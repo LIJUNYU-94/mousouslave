@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { SmallScreen } from "./components/smallscreen";
+import Head from "next/head";
 function part(x: number) {
   const data = [
     {
@@ -44,6 +45,9 @@ export default function Home() {
   const smallscreen = SmallScreen();
   return (
     <>
+      <Head>
+        <title>妄想slave応援非公式</title>
+      </Head>
       <main className="h-[100dvh] bg-slate-400/80 max-w-[500px]">
         <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           妄想slave <br />

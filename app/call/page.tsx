@@ -133,21 +133,9 @@ function SongsContent() {
                 onToggle={() => handleToggle(index)}
               />
             ))}
-          {mode === "practice" && <p>🎤 練習モードの画面</p>}
-          {mode === "live" && <p>🔥 LIVEモードの画面</p>}
-          {mode === "simple" &&
-            mix.map((item, index) => (
-              <CallItem
-                key={index}
-                position={
-                  Array.isArray(item.position) ? item.position : [item.position]
-                }
-                mix={item.mix}
-                mixtext={item.mixtext}
-                isOpen={active === index}
-                onToggle={() => handleToggle(index)}
-              />
-            ))}
+          {mode === "practice" && <p>🎤 練習モードの画面 開発中～</p>}
+          {mode === "live" && <p>🔥 LIVEモードの画面 開発中～</p>}
+          {mode === "simple" && <p>🔥 簡潔モードの画面 開発中～</p>}
         </div>
       </div>
     </>

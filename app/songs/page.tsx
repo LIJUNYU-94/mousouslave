@@ -1,4 +1,5 @@
 "use client";
+import Head from "next/head";
 import { useReducer } from "react";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
@@ -38,43 +39,61 @@ function SongsContent() {
       "liveが見つかりません"
     : "";
   return (
-    <div className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto">
-      <Menu mode={mode} dispatch={dispatch} />
-      <div
-        className={`${
-          smallscreen ? "h-[75dvh]" : "h-[80dvh]"
-        } w-full bg-black mt-[2dvh] text-white`}
-      >
-        <h2 className="text-2xl pt-[3dvh] text-center ">
-          {data[now]?.name || "曲を選んでください"}
-        </h2>
-        {mode === "lyrics" && (
-          <p className="whitespace-pre-line w-[80%] mx-auto mt-[3dvh]">
-            {lyrics}
-          </p>
-        )}
-        {mode === "video" && (
-          <div className="mt-[2dvh] flex flex-col justify-between">
-            <div>
-              <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
-                公式MV
-              </p>
-              <div className="relative">
-                <YoutubeEmbed videoId={mv} />
+    <>
+      <Head>
+        <title>妄想slave応援非公式</title>
+      </Head>
+      <div className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto ">
+        <Menu mode={mode} dispatch={dispatch} />
+        <div
+          className={`${
+            smallscreen ? "h-[75dvh]" : "h-[80dvh]"
+          } w-full bg-black mt-[2dvh] text-white ${
+            mode === "lyrics"
+              ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+              : ""
+          } 
+          `}
+        >
+          <h2 className="text-2xl pt-[3dvh] text-center ">
+            {data[now]?.name || "曲を選んでください"}
+          </h2>
+          {mode === "lyrics" && (
+            <p className="whitespace-pre-line w-[80%] mx-auto mt-[3dvh] ">
+              {lyrics}
+            </p>
+          )}
+          {mode === "video" && (
+            <div className="mt-[2dvh] flex flex-col justify-between">
+              <div>
+                <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
+                  公式MV
+                </p>
+                <div className="relative">
+                  {mv === "" ? (
+                    <p>曲を選択してください</p>
+                  ) : (
+                    <YoutubeEmbed videoId={mv} />
+                  )}
+                </div>
+              </div>
+              <div>
+                <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
+                  ライブ動画(カメコ)
+                </p>
+                <div className="relative">
+                  {live === "" ? (
+                    <p>曲を選択してください</p>
+                  ) : (
+                    <YoutubeEmbed videoId={live} />
+                  )}
+                </div>
               </div>
             </div>
-            <div>
-              <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
-                ライブ動画(カメコ)
-              </p>
-              <div className="relative">
-                <YoutubeEmbed videoId={live} />
-              </div>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

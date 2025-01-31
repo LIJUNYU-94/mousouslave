@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
 import { useState } from "react";
+import Link from "next/link";
 // import { SmallScreen } from "../components/smallscreen";
 const songs = data;
 const songlist = songs
@@ -103,7 +104,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
         </div>
       )}
       {activeMenu === "mode" && (
-        <div className="absolute top-[10dvh] left-[5%] h-[40dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
+        <div className="absolute top-[10dvh] left-[5%] h-[60dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
           <p className="font-bold mb-[4dvh]">{menu.title}</p>
           <div className="flex flex-col gap-2 mt-[2dvh]">
             {menu.options.map((option, index) => (
@@ -123,6 +124,14 @@ export default function Menu({ mode, dispatch }: MenuProps) {
               </button>
             ))}
           </div>
+          <Link
+            className="absolute bottom-[1dvh] right-[0%] w-full h-[7dvh]"
+            href="/"
+          >
+            <p className=" text-center absolute  left-1/2  -translate-x-1/2 top-1/2 -translate-y-1/2 bg-slate-700 text-white whitespace-nowrap px-4 py-2 rounded-md">
+              back
+            </p>
+          </Link>
         </div>
       )}
     </>
