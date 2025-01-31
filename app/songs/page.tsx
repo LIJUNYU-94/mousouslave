@@ -48,11 +48,11 @@ function SongsContent() {
         <div
           className={`${
             smallscreen ? "h-[75dvh]" : "h-[80dvh]"
-          } w-full bg-black mt-[2dvh] text-white ${
-            mode === "lyrics"
-              ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-              : ""
-          } 
+          } w-full bg-black mt-[2dvh] text-white
+           
+              overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            
+          
           `}
         >
           <h2 className="text-2xl pt-[3dvh] text-center ">
