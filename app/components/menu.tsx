@@ -104,7 +104,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
         </div>
       )}
       {activeMenu === "mode" && (
-        <div className="absolute top-[10dvh] left-[5%] h-[60dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
+        <div className="absolute top-[10dvh] left-[5%] h-[80dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
           <p className="font-bold mb-[4dvh]">{menu.title}</p>
           <div className="flex flex-col gap-2 mt-[2dvh]">
             {menu.options.map((option, index) => (
