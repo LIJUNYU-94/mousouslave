@@ -32,8 +32,6 @@ export default function Menu({ mode, dispatch }: MenuProps) {
     setActiveMenu(null); // メニューを閉じる
   };
 
-  const handleSelect = () => {};
-  // const smallscreen = SmallScreen();
   type MenuConfigMap = {
     [key: string]: {
       title: string;
