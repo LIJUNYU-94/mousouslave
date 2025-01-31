@@ -106,16 +106,18 @@ function SongsContent() {
     <>
       {/* <p className="absolute text-white">{now}</p> */}
 
-      <div className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto">
+      <div
+        className="max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 relative mx-auto overflow-y-scroll [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+      >
         <Menu mode={mode} dispatch={dispatch} />
         <div
           className={`${
             smallscreen ? "h-[75dvh]" : "h-[80dvh]"
-          } w-full bg-black mt-[2dvh] text-white overflow-y-scroll [&::-webkit-scrollbar]:w-2
-  [&::-webkit-scrollbar-track]:bg-gray-100
-  [&::-webkit-scrollbar-thumb]:bg-gray-300
-  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500`}
+          } w-full bg-black mt-[2dvh] text-white `}
         >
           <h2 className="text-2xl mt-[2dvh] text-center ">
             {data[now]?.name || "曲を選んでください"}
