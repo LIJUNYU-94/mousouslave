@@ -5,6 +5,7 @@ import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
 import { SmallScreen } from "../components/smallscreen";
+import LiveCallSystem from "./livecall";
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
     case "SET_MODE":
@@ -110,7 +111,7 @@ function SongsContent() {
         <Menu mode={mode} dispatch={dispatch} />
         <div
           className={`${
-            smallscreen ? "h-[87dvh]" : "h-[88dvh]"
+            smallscreen ? "h-[87dvh]" : "h-[91dvh]"
           } w-full bg-black mt-[2dvh] text-white overflow-y-scroll [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
@@ -134,7 +135,12 @@ function SongsContent() {
               />
             ))}
           {mode === "practice" && <p>🎤 練習モードの画面 開発中～</p>}
-          {mode === "live" && <p>🔥 LIVEモードの画面 開発中～</p>}
+          {mode === "live" && (
+            <>
+              <p>🔥 LIVEモードの画面 開発中～</p>
+              <LiveCallSystem />
+            </>
+          )}
           {mode === "practicevideo" && <p>🔥 練習動画 開発中～</p>}
         </div>
       </div>

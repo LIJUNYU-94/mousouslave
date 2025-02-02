@@ -54,7 +54,7 @@ function SongsContent() {
         <Menu mode={mode} dispatch={dispatch} />
         <div
           className={`${
-            smallscreen ? "h-[87dvh]" : "h-[90dvh]"
+            smallscreen ? "h-[87dvh]" : "h-[91dvh]"
           } w-full bg-black mt-[2dvh] text-white ${
             mode === "lyrics"
               ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
@@ -86,7 +86,7 @@ function SongsContent() {
               </div>
               <div>
                 <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
-                  ライブ動画(カメコ)
+                  ライブ映像(カメコ)
                 </p>
                 <div className="relative">
                   {live === "" ? (
