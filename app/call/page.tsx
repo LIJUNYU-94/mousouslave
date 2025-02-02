@@ -138,7 +138,7 @@ function SongsContent() {
           {mode === "live" && (
             <>
               <p>🔥 LIVEモードの画面 開発中～</p>
-              <LiveCallSystem />
+              {/* <LiveCallSystem /> */}
             </>
           )}
           {mode === "practicevideo" && <p>🔥 練習動画 開発中～</p>}
