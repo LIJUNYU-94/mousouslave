@@ -54,7 +54,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
         { label: "全文モード", value: "check" },
         { label: "練習モード", value: "practice" },
         { label: "LIVEモード", value: "live" },
-        { label: "簡潔モード", value: "simple" },
+        { label: "練習動画", value: "practicevideo" },
       ],
     },
     default: {

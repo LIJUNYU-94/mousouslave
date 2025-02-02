@@ -44,7 +44,7 @@ function SongsContent() {
         <title>妄想slave応援非公式</title>
       </Head>
       <div
-        className={`max-w-[500px] h-[100dvh] flex items-center justify-center bg-black/80 
+        className={`max-w-[500px] h-[100dvh] flex items-end justify-end bg-black/80 
       relative mx-auto ${
         mode === "video"
           ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
@@ -54,7 +54,7 @@ function SongsContent() {
         <Menu mode={mode} dispatch={dispatch} />
         <div
           className={`${
-            smallscreen ? "h-[75dvh]" : "h-[80dvh]"
+            smallscreen ? "h-[87dvh]" : "h-[90dvh]"
           } w-full bg-black mt-[2dvh] text-white ${
             mode === "lyrics"
               ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
