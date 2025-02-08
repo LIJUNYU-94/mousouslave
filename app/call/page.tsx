@@ -132,7 +132,7 @@ function SongsContent() {
 
   useEffect(() => {
     if (mode !== "practice") return;
-    let player: typeof window.YT.Player | null = null;
+    let player: YT.Player | null = null;
 
     const updateTime = () => {
       if (!player || typeof player.getCurrentTime !== "function") return;
@@ -150,7 +150,7 @@ function SongsContent() {
             onReady: () => {
               console.log("YouTube Player is ready!");
             },
-            onStateChange: (event: typeof window.YT.OnStateChangeEvent) => {
+            onStateChange: (event: YT.OnStateChangeEvent) => {
               if (event.data === window.YT.PlayerState.PLAYING) {
                 console.log("Video is playing!");
                 setInterval(updateTime, 1000); //  動画が再生されたら `updateTime()` を開始
