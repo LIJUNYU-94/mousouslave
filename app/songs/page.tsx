@@ -40,7 +40,7 @@ function SongsContent() {
     <>
       <div
         className={`max-w-[500px]
-      relative mx-auto ${
+      relative mx-auto h-[100dvh] mb-[10dvh]${
         mode === "video"
           ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
           : ""
