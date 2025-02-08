@@ -179,7 +179,7 @@ function SongsContent() {
     const sectionTimes: Record<string, number> = data[now]?.calllive
       ? (Object.fromEntries(
           Object.entries(data[now].calllive).filter(
-            ([_, value]) => typeof value === "number"
+            ([, value]) => typeof value === "number"
           )
         ) as Record<string, number>)
       : {};
