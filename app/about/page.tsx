@@ -37,7 +37,7 @@ export default function about() {
           <dd className="ml-[15%]">2.8:動画の使用許可取得済、全ページ公開</dd>
           <dd className="ml-[15%]">2.9:練習モード機能</dd>
         </div>
-        <div className="absolute bottom-[8dvh] w-full">
+        <div className="absolute bottom-[50px] w-full">
           <Link href="/">
             <p className="w-fit mx-auto text-center bg-slate-700 text-white whitespace-nowrap px-4 py-2 rounded-md">
               back
