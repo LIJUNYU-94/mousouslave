@@ -6,6 +6,7 @@ import { SongProvider } from "../components/SongContext";
 import data from "../../src/mousouslave.json";
 import { useSong } from "../components/SongContext";
 import YoutubeEmbed from "../components/youtubeEmbed";
+import { SmallScreen } from "../components/smallscreen";
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
     case "SET_MODE":
@@ -15,6 +16,7 @@ const reducer = (state: string, action: { type: string; payload: string }) => {
   }
 };
 function SongsContent() {
+  const isScreenSmall = SmallScreen();
   const [mode, dispatch] = useReducer(reducer, "video");
   const { selectedSongName } = useSong();
   const lyrics = selectedSongName
@@ -40,11 +42,11 @@ function SongsContent() {
     <>
       <div
         className={`max-w-[500px]
-      relative mx-auto h-[100dvh] mb-[10dvh]${
-        mode === "video"
-          ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-          : ""
-      }  `}
+      relative mx-auto ${isScreenSmall ? "h-[120dvh] " : "h-[100dvh]"} ${
+          mode === "video"
+            ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            : ""
+        }  `}
       >
         <Menu mode={mode} dispatch={dispatch} />
         <div
