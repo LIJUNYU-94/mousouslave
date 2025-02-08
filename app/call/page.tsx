@@ -200,14 +200,14 @@ function SongsContent() {
       <div className="max-w-[500px] relative mx-auto ">
         <Menu mode={mode} dispatch={dispatch} />
         <div
-          className={`h-[100dvh] w-full bg-black text-white overflow-y-scroll`}
+          className={`h-[100dvh] w-full bg-black text-white overflow-y-scroll scrollbar-none`}
         >
           <h2 className="text-2xl pt-[20px] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>
 
           {mode === "check" && (
-            <div className="mb-[20dvh] overflow-y-scroll">
+            <div className="mb-[20dvh] overflow-y-scroll scrollbar-none">
               {mix.map((item, index) => (
                 <CallItem
                   key={index}

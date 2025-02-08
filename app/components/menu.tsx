@@ -4,7 +4,7 @@ import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
 import { useState } from "react";
 import Link from "next/link";
-import { SmallScreen } from "../components/smallscreen";
+// import { SmallScreen } from "../components/smallscreen";
 const songs = data;
 const songlist = songs
   .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
@@ -27,7 +27,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
   };
   const { setSelectedSongName } = useSong();
   const pathname = usePathname();
-  const isScreenSmall = SmallScreen();
+  // const isScreenSmall = SmallScreen();
   const handleSongSelect = (songName: string) => {
     setSelectedSongName(songName); // 曲をセット
     setActiveMenu(null); // メニューを閉じる
@@ -126,9 +126,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
             ))}
           </div>
           <div
-            className={`absolute bottom-[5dvh] flex justify-center gap-[80px] ${
-              isScreenSmall ? "h-[46.5px] " : "h-[5dvh]"
-            } w-[90%]`}
+            className={`absolute bottom-[5dvh] flex justify-center gap-[80px] h-[46.5px] w-[90%]`}
           >
             <Link
               className=" text-center w-[80px] bg-slate-700 text-white whitespace-nowrap px-4 py-2 rounded-md"

@@ -34,3 +34,13 @@ body {
     @apply no-underline;
   }
 }
+@layer utilities {
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Firefox 用 */
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+}
