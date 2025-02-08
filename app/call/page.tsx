@@ -1,10 +1,9 @@
 "use client";
-import { useState, useReducer, useEffect, JSX } from "react";
+import { useState, useReducer, useEffect } from "react";
 import data from "@/src/mousouslave.json";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
-import { SmallScreen } from "../components/smallscreen";
 import YouTubePlayer from "../components/youtubePlayer";
 
 const reducer = (state: string, action: { type: string; payload: string }) => {
@@ -88,7 +87,6 @@ function SongsContent() {
     setCurrentTime(time);
   };
 
-  const smallscreen = SmallScreen();
   const { selectedSongName } = useSong();
   // const lyrics = selectedSongName
   //   ? data.find((song) => song.name === selectedSongName)?.lyrics ||
