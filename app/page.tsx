@@ -45,7 +45,7 @@ export default function Home() {
   const smallscreen = SmallScreen();
   return (
     <>
-      <main className="h-[100dvh] bg-slate-400/80 max-w-[500px]">
+      <main className="h-[100dvh] bg-slate-400/80 max-w-[500px] mx-auto">
         <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           妄想slave <br />
           非公式応援サイト
