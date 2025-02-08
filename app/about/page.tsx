@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { SmallScreen } from "../components/smallscreen";
 export default function about() {
