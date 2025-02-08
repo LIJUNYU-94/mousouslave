@@ -1,8 +1,14 @@
 import Link from "next/link";
+import { SmallScreen } from "../components/smallscreen";
 export default function about() {
+  const isScreenSmall = SmallScreen();
   return (
     <>
-      <div className="h-[100dvh] max-w-[500px] bg-slate-300/80 relative overflow-y-scroll scrollbar-none">
+      <div
+        className={`${
+          isScreenSmall ? "h-[120dvh]" : "h-[100dvh]"
+        } max-w-[500px] bg-slate-300/80 relative overflow-y-scroll scrollbar-none relative`}
+      >
         <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           about me
         </h1>
