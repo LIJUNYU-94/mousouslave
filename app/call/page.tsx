@@ -69,9 +69,9 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
 }
 function LiveCall({ position, mixtext }: CallLiveProps) {
   return (
-    <div className="mt-[2dvh]  overflow-y-scroll ">
+    <div className="mt-[2dvh]  overflow-y-scroll scrollbar-none">
       <p className="mt-[2dvh] text-center">{position}</p>
-      <div className="w-[80%] mx-auto text-xl tracking-wider overflow-y-scroll max-h-[120dvh] pb-[10dvh]">
+      <div className="w-[80%] mx-auto text-xl tracking-wider overflow-y-scroll max-h-[120dvh] pb-[10dvh] scrollbar-none">
         {mixtext.map((text, i) => (
           <p key={i}>{text}</p>
         ))}
