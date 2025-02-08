@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function about() {
   return (
     <>
-      <div className="h-[100dvh] max-w-[500px] bg-slate-300/80">
+      <div className="h-[100dvh] max-w-[500px] bg-slate-300/80 relative overflow-y-scroll scrollbar-none">
         <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           about me
         </h1>
