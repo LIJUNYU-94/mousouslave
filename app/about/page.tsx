@@ -24,7 +24,11 @@ export default function about() {
             きみはれ💜/ハロパレ🩷/あまねみお🤍
           </p>
         </div>
-        <div className="flex flex-col text-left">
+        <div
+          className={`flex flex-col text-left ${
+            isScreenSmall ? "mb-[10dvh]" : ""
+          }`}
+        >
           <dt className="text-xl ml-[10%] font-bold pb-[1vh]">更新履歴：</dt>
           <dd className="ml-[15%]">1.20:制作開始</dd>
           <dd className="ml-[15%]">1.21:コールチェック機能</dd>
