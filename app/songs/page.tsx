@@ -5,7 +5,6 @@ import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import data from "../../src/mousouslave.json";
 import { useSong } from "../components/SongContext";
-import { SmallScreen } from "../components/smallscreen";
 import YoutubeEmbed from "../components/youtubeEmbed";
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
@@ -17,7 +16,6 @@ const reducer = (state: string, action: { type: string; payload: string }) => {
 };
 function SongsContent() {
   const [mode, dispatch] = useReducer(reducer, "video");
-  const smallscreen = SmallScreen();
   const { selectedSongName } = useSong();
   const lyrics = selectedSongName
     ? data.find((song) => song.name === selectedSongName)?.lyrics ||
