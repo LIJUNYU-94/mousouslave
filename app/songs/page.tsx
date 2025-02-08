@@ -1,5 +1,5 @@
 "use client";
-import Head from "next/head";
+
 import { useReducer } from "react";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
@@ -38,9 +38,6 @@ function SongsContent() {
     : "";
   return (
     <>
-      <Head>
-        <title>妄想slave応援非公式</title>
-      </Head>
       <div
         className={`max-w-[500px]
       relative mx-auto ${

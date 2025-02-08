@@ -49,7 +49,7 @@ export default function officials() {
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaInstagramSquare />
-            指田りさ instagram
+            指田りさ ins
           </Link>
           <Link
             href="https://www.tiktok.com/@risa_2003_0305
@@ -71,7 +71,7 @@ export default function officials() {
 "
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
-            <FaInstagramSquare /> 神凪りぴ instagram
+            <FaInstagramSquare /> 神凪りぴ ins
           </Link>
           <Link
             href="https://www.tiktok.com/@ripiripitan
