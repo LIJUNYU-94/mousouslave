@@ -24,7 +24,7 @@ export default function unofficials() {
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter />
-            りさちのコンカフェ屋さん
+            りさちコンカフェ屋さん
           </Link>
           <Link
             href="https://x.com/nyagonyancoo

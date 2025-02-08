@@ -44,7 +44,7 @@ function SongsContent() {
         <title>妄想slave応援非公式</title>
       </Head>
       <div
-        className={`max-w-[500px] h-[100dvh] flex items-end justify-end bg-black/80 
+        className={`max-w-[500px]
       relative mx-auto ${
         mode === "video"
           ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
@@ -53,20 +53,19 @@ function SongsContent() {
       >
         <Menu mode={mode} dispatch={dispatch} />
         <div
-          className={`${
-            smallscreen ? "h-[87dvh]" : "h-[91dvh]"
-          } w-full bg-black mt-[2dvh] text-white ${
-            mode === "lyrics"
-              ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-              : ""
-          } 
+          className={` h-[100dvh]
+             w-full bg-black text-white ${
+               mode === "lyrics"
+                 ? "overflow-y-scroll [&::-webkit-scrollbar]:w-2[&::-webkit-scrollbar-track]:bg-gray-100[&::-webkit-scrollbar-thumb]:bg-gray-400dark:[&::-webkit-scrollbar-track]:bg-neutral-700dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+                 : ""
+             } 
           `}
         >
-          <h2 className="text-2xl pt-[3dvh] text-center ">
+          <h2 className="text-2xl pt-[20px] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>
           {mode === "lyrics" && (
-            <p className="whitespace-pre-line w-[80%] mx-auto mt-[3dvh] ">
+            <p className="whitespace-pre-line w-[80%] mx-auto mt-[3dvh] tracking-wider">
               {lyrics}
             </p>
           )}

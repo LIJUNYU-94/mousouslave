@@ -65,7 +65,7 @@ const AudioRecognition = ({
       <button
         onClick={startListening}
         disabled={isListening}
-        className="p-2 m-2 rounded border-2 border-white"
+        className="p-2 mt-[3dvh] rounded border-2 border-white"
       >
         🎤 ライブ音声認識...
       </button>

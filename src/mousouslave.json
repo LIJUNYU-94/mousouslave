@@ -13,6 +13,14 @@
       "Interlude": "アイヌ可変アイヌ",
       "Outro": "裏ドイツ逆打ち"
     },
+    "calllive": {
+      "Introduction": 0,
+      "PreChorus": 100,
+      "PostChorus": 140,
+      "PreChorus2": 180,
+      "Interlude": 210,
+      "Outro": 240
+    },
     "callfull": {
       "Introduction": [
         "(倍速)タイガー ファイヤー サイバー ファイバー",
@@ -61,6 +69,13 @@
       "Interlude": "可変三連２",
       "Outro": "ガチ恋キャンセルドイツ三連"
     },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 60,
+      "Verse": 90,
+      "Interlude": 130,
+      "Outro": 180
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -68,7 +83,8 @@
         "ファイボー ワイパー ファーマー ジャスパー",
         "ホワイパー クーパー イエスクレイパー ",
         "クレイパー クーパー ホワイパー",
-        "ジャスパー ファーマー ワイパー ファイボー ジャージャー"
+        "ジャスパー ファーマー ワイパー ファイボー ",
+        "ジャージャー"
       ],
       "PostChorus": [
         "マルフォイ マルフォイ マルフォイ マルフォイ",
@@ -100,7 +116,8 @@
       ],
       "Outro": [
         "言いたいことがあるんだよ",
-        "やっぱりりさちがゲーエンヴィアー",
+        "やっぱり〇〇〇が",
+        "ゲーエンヴィアー",
         "ティーガァ フォイエル",
         "クゥンスト フィーバー",
         "タゥツァー シュビングング",
@@ -125,6 +142,11 @@
       "Introduction": "萌え萌えキュン発動スタンダード",
       "PostChorus": "ジャパン倍速",
       "Interlude": "ガチ恋口上"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 50,
+      "Interlude": 100
     },
     "callfull": {
       "Introduction": [
@@ -157,8 +179,14 @@
     "call": {
       "Introduction": "スタンダード",
       "PostChorus": "ジャパニーズ",
-      "Interlude": "すーいすーいすいすいすい",
+      "Interlude": "よいカチン口上",
       "Outro": "バロよいmix"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 60,
+      "Interlude": 120,
+      "Outro": 180
     },
     "callfull": {
       "Introduction": [
@@ -167,14 +195,14 @@
       ],
       "PostChorus": ["虎 火 人造 繊維", "海女 振動 化繊"],
       "Interlude": [
-        "すーいすーいすいすいすい!",
-        "妄スレ飲まなきゃ嫌だっちゃ〜",
-        "1くいる〜 2りぴた〜",
-        "3りさちからの死亡!",
-        "すーいすーいすいすいすい!",
-        "ヤッパ妄スレ飲まなきゃ嫌だっちゃ~",
-        "1くいる〜 2りぴた~",
-        "3りさちからの死亡!"
+        "言いたいことは酔いカチン",
+        "LIVEの後には生ビール",
+        "好き好き大好き鬼殺し",
+        "やっと見つけた👏飲み屋",
+        "俺が生まれてきた理由",
+        "それはお酒に出会うため",
+        "俺と一緒にへらへら呑もうな",
+        "お酒も〇〇も愛してる！"
       ],
       "Outro": [
         "しゃー飲むぞ! (発動)",
@@ -198,6 +226,12 @@
       "PostChorus": "虎火発動 ジャパニーズ",
       "Interlude": "タケミンオリジナルパーフェクト",
       "Outro": "時折マーメイド"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 60,
+      "Interlude": 100,
+      "Outro": 160
     },
     "callfull": {
       "Introduction": [
@@ -242,6 +276,7 @@
       "PostChorus": "闇mixスロー",
       "Interlude": "旧：日アイヌ可変 新：朦月mix"
     },
+    "calllive": { "Introduction": 0, "PostChorus": 60, "Interlude": 130 },
     "callfull": {
       "Introduction": [
         "ミョーホントゥスケ 化繊飛除去",
@@ -279,6 +314,12 @@
       "PostChorus": "虎火始動 ジャパニーズ",
       "Bridge": "混沌→混沌逆打ち",
       "Outro": "裏スペ逆打ち裏スペキャンセルポルトガル逆打ち"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 60,
+      "Bridge": 90,
+      "Outro": 140
     },
     "callfull": {
       "Introduction": [
@@ -331,6 +372,13 @@
       "Interlude": "可変三連ワイパーキャンセルver.",
       "Bridge": "混沌MIX",
       "Outro": "花火mix"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 120,
+      "Interlude": 150,
+      "Bridge": 198,
+      "Outro": 220
     },
     "callfull": {
       "Introduction": [
@@ -391,13 +439,23 @@
       "Interlude": "クラップからの アラビア語 ｲｪｯ!ﾏﾝｹﾞ!ｴﾀｰﾅﾙ!",
       "Outro": "アッチェレ終幕ジャパ可変"
     },
+    "calllive": {
+      "Introduction": 0,
+      "Chorus": 40,
+      "PostChorus": 70,
+      "Interlude": 120,
+      "Outro": 180
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
         "ダイバー バイバー ジャージャー",
         "ファイボー ワイパー"
       ],
-      "Chorus": ["意味不あいあい", "ゴキあいで盛り上がりましょう"],
+      "Chorus": [
+        "アイアイアイアイアイ！もう一回！",
+        "アイアイアイアイ！アイアイアイアイ！"
+      ],
       "PostChorus": ["(倍速)虎 火 人造 繊維 ", "海女 振動 化繊"],
       "Interlude": [
         "スィフリーアスィール(始動)",
@@ -431,6 +489,12 @@
       "PostChorus": "虎火発動（トラトラなし）→跳！海鵜！舞農場！",
       "Interlude": "倍速銀河口上ファボリアスター→\n\n倍速可変3連→倍速チスパ可変→七大罪（英語）",
       "Outro": "チャペアペ発動アイヌ晴→カムイ！ホロカプ！アーホイヨ！"
+    },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 120,
+      "Interlude": 180,
+      "Outro": 290
     },
     "callfull": {
       "Introduction": [
@@ -502,6 +566,15 @@
       "Interlude": "中国語アッチェレ",
       "Outro": "中国語3連"
     },
+    "calllive": {
+      "Introduction": 0,
+      "PreChorus": 100,
+      "Chorus": 125,
+      "PostChorus": 140,
+      "PreChorus2": 170,
+      "Interlude": 200,
+      "Outro": 250
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -557,6 +630,12 @@
       "Interlude": "アイヌ日可変→倍速日本語可変",
       "Outro": "ドイツ1連 (出来る人はツーステも👍)"
     },
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 70,
+      "Interlude": 100,
+      "Outro": 160
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -594,6 +673,7 @@
       "Introduction": "スタンダード",
       "Interlude": "六花MIX"
     },
+    "calllive": { "Introduction": 0, "Interlude": 60 },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",

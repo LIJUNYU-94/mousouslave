@@ -1,11 +1,12 @@
 "use client";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect, JSX } from "react";
 import data from "@/src/mousouslave.json";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
 import { SmallScreen } from "../components/smallscreen";
-import LiveCallSystem from "./livecall";
+import YouTubePlayer from "../components/youtubePlayer";
+
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
     case "SET_MODE":
@@ -32,6 +33,10 @@ interface CallItemProps {
   isOpen: boolean;
   onToggle: () => void;
 }
+interface CallLiveProps {
+  position: string[] | string[];
+  mixtext: string[];
+}
 function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
   return (
     <>
@@ -46,14 +51,16 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
         </p>
         {isOpen && (
           <div
-            className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[5px] pt-[2px] [&::-webkit-scrollbar]:w-2
+            className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[10px] py-[5px] [&::-webkit-scrollbar]:w-2
   [&::-webkit-scrollbar-track]:bg-gray-100
   [&::-webkit-scrollbar-thumb]:bg-gray-300
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
   dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
           >
             {mixtext.map((text, i) => (
-              <p key={i}>{text}</p>
+              <p className="tracking-wider" key={i}>
+                {text}
+              </p>
             ))}
           </div>
         )}
@@ -61,8 +68,26 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
     </>
   );
 }
+function LiveCall({ position, mixtext }: CallLiveProps) {
+  return (
+    <div className="mt-[2dvh]  overflow-y-scroll ">
+      <p className="mt-[2dvh] text-center">{position}</p>
+      <div className="w-[80%] mx-auto text-xl tracking-wider overflow-y-scroll max-h-[120dvh] pb-[10dvh]">
+        {mixtext.map((text, i) => (
+          <p key={i}>{text}</p>
+        ))}
+      </div>
+    </div>
+  );
+}
 function SongsContent() {
   const [mode, dispatch] = useReducer(reducer, "check");
+  const [currentTime, setCurrentTime] = useState(0);
+  const handleTimeUpdate = (time: number) => {
+    console.log("🎵 Received Time Update:", time);
+    setCurrentTime(time);
+  };
+
   const smallscreen = SmallScreen();
   const { selectedSongName } = useSong();
   // const lyrics = selectedSongName
@@ -74,7 +99,10 @@ function SongsContent() {
     : -1; // 該当する曲がなければ -1 を返す
   const call: Partial<Record<string, string>> =
     now !== -1 ? data[now]?.call || {} : {};
-
+  const live = selectedSongName
+    ? data.find((song) => song.name === selectedSongName)?.live ||
+      "liveが見つかりません"
+    : "";
   const mixlist: string[][] = Object.entries(callMapping)
     .filter(([key]) => typeof call[key] === "string") // `call[key]` が `string` の場合のみ取得
     .map(([key]) => [call[key] as string]); // `mixname` の値をリスト形式にする
@@ -103,45 +131,149 @@ function SongsContent() {
   const [active, setActive] = useState<number | null>(null);
   const handleToggle = (index: number) =>
     setActive((prev) => (prev === index ? null : index));
+
+  useEffect(() => {
+    if (mode !== "practice") return;
+    let player: any = null;
+
+    const updateTime = () => {
+      if (!player || typeof player.getCurrentTime !== "function") return;
+      const newTime = Math.floor(player.getCurrentTime());
+      console.log("Updated Current Time:", newTime);
+      setCurrentTime(newTime);
+    };
+
+    const checkYouTubePlayer = () => {
+      if (window.YT && window.YT.Player) {
+        console.log("YouTube API is loaded!");
+
+        player = new window.YT.Player("youtube-player", {
+          events: {
+            onReady: () => {
+              console.log("YouTube Player is ready!");
+            },
+            onStateChange: (event: any) => {
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                console.log("Video is playing!");
+                setInterval(updateTime, 1000); //  動画が再生されたら `updateTime()` を開始
+              }
+            },
+          },
+        });
+      } else {
+        console.warn("YouTube API is not yet loaded, retrying...");
+        setTimeout(checkYouTubePlayer, 500);
+      }
+    };
+
+    console.log("Starting YouTube API load check...");
+    checkYouTubePlayer();
+
+    return () => {
+      if (player) {
+        player.stopVideo();
+      }
+    };
+  }, []);
+
+  const getCurrentSongSection = (currentTime: number): string | null => {
+    const roundedTime = Math.floor(currentTime);
+    const sectionTimes: Record<string, number> = data[now]?.calllive
+      ? (Object.fromEntries(
+          Object.entries(data[now].calllive).filter(
+            ([_, value]) => typeof value === "number"
+          )
+        ) as Record<string, number>)
+      : {};
+
+    const foundSection = Object.keys(sectionTimes)
+      .sort((a, b) => sectionTimes[b] - sectionTimes[a]) // **時間の大きい順に並び替え**
+      .find((section) => roundedTime >= sectionTimes[section]);
+
+    console.log("Found Section Before Mapping:", foundSection);
+
+    return foundSection ? callMapping[foundSection] : null;
+  };
+
   return (
     <>
       {/* <p className="absolute text-white">{now}</p> */}
 
-      <div className="max-w-[500px] h-[100dvh] flex items-end justify-end bg-black/80 relative mx-auto ">
+      <div className="max-w-[500px] relative mx-auto ">
         <Menu mode={mode} dispatch={dispatch} />
         <div
-          className={`${
-            smallscreen ? "h-[87dvh]" : "h-[91dvh]"
-          } w-full bg-black mt-[2dvh] text-white overflow-y-scroll [&::-webkit-scrollbar]:w-2
-  [&::-webkit-scrollbar-track]:bg-gray-100
-  [&::-webkit-scrollbar-thumb]:bg-gray-300
-  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500`}
+          className={`h-[100dvh] w-full bg-black text-white overflow-y-scroll`}
         >
-          <h2 className="text-2xl mt-[2dvh] text-center ">
+          <h2 className="text-2xl pt-[20px] text-center ">
             {data[now]?.name || "曲を選んでください"}
           </h2>
-          {mode === "check" &&
-            mix.map((item, index) => (
-              <CallItem
-                key={index}
-                position={
-                  Array.isArray(item.position) ? item.position : [item.position]
-                }
-                mix={item.mix}
-                mixtext={item.mixtext}
-                isOpen={active === index}
-                onToggle={() => handleToggle(index)}
-              />
-            ))}
-          {mode === "practice" && <p>🎤 練習モードの画面 開発中～</p>}
-          {mode === "live" && (
+
+          {mode === "check" && (
+            <div className="mb-[20dvh] overflow-y-scroll">
+              {mix.map((item, index) => (
+                <CallItem
+                  key={index}
+                  position={
+                    Array.isArray(item.position)
+                      ? item.position
+                      : [item.position]
+                  }
+                  mix={item.mix}
+                  mixtext={item.mixtext}
+                  isOpen={active === index}
+                  onToggle={() => handleToggle(index)}
+                />
+              ))}
+            </div>
+          )}
+
+          {mode === "practice" && (
             <>
-              <p>🔥 LIVEモードの画面 開発中～</p>
-              {/* <LiveCallSystem /> */}
+              {now !== -1 && (
+                <YouTubePlayer videoId={live} onTimeUpdate={handleTimeUpdate} />
+              )}
+              {/* {now !== -1 &&
+                mix.map((item, index) => (
+                  <LiveCall
+                    key={index}
+                    position={
+                      Array.isArray(item.position)
+                        ? item.position
+                        : [item.position]
+                    }
+                    mixtext={item.mixtext}
+                  />
+                ))} */}
+              {now !== -1 &&
+                (() => {
+                  const currentSection = getCurrentSongSection(currentTime);
+                  const item = mix.find((item) => {
+                    console.log("Checking Item Position:", item.position);
+                    console.log(
+                      "Comparing with Current Section:",
+                      currentSection
+                    );
+                    return item.position === currentSection;
+                  });
+                  return item ? (
+                    <LiveCall
+                      position={
+                        Array.isArray(item.position)
+                          ? item.position
+                          : [item.position]
+                      }
+                      mixtext={item.mixtext}
+                    />
+                  ) : null;
+                })()}
             </>
           )}
-          {mode === "practicevideo" && <p>🔥 練習動画 開発中～</p>}
+          {mode === "live" && (
+            <>
+              <p>LIVEモードの画面 開発中～</p>
+            </>
+          )}
+          {mode === "practicevideo" && <p> 練習動画 開発中～</p>}
         </div>
       </div>
     </>
@@ -160,9 +292,7 @@ export default function call() {
 
   return (
     <SongProvider>
-      <main className="h-[100dvh]">
-        <SongsContent />
-      </main>
+      <SongsContent />
     </SongProvider>
   );
 }
