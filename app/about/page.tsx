@@ -26,7 +26,7 @@ export default function about() {
         </div>
         <div
           className={`flex flex-col text-left ${
-            isScreenSmall ? "mb-[10dvh]" : ""
+            isScreenSmall ? "pb-[300px]" : ""
           }`}
         >
           <dt className="text-xl ml-[10%] font-bold pb-[1vh]">更新履歴：</dt>
