@@ -323,7 +323,7 @@
     },
     "callfull": {
       "Introduction": [
-        "タイタイタイタイ",
+        "タイタタタイタイ",
         "タイガーファイヤー",
         "サイバー ファイバー ダイバー",
         "バイバー ジャージャー ファイボ ワイパー"
@@ -453,16 +453,16 @@
         "ファイボー ワイパー"
       ],
       "Chorus": [
-        "アイアイアイアイアイ！もう一回！",
-        "アイアイアイアイ！アイアイアイアイ！"
+        "アイアイアイアイアイ！ もう一回！",
+        "アイアイアイアイ！ アイアイアイアイ！"
       ],
       "PostChorus": ["(倍速)虎 火 人造 繊維 ", "海女 振動 化繊"],
       "Interlude": [
-        "スィフリーアスィール(始動)",
+        "スィフリーアスィール (始動)",
         "ナミル ナール スィナーイー ナスィージュ",
         "ガタサ ハッザ ハイトゥンシナーイー",
         "(間奏の最後→)",
-        "イエッ！マンゲ！エターナル"
+        "イエッ！ マンゲ！ エターナル"
       ],
       "Outro": [
         "農場 舞 海鵜（うみう）跳 （ちょう）",
@@ -483,7 +483,7 @@
     "name": "恋のアカシ",
     "rank": "1",
     "mv": "ogya9Y-vRYk",
-    "live": "-48nhENHmPM",
+    "live": "pO2n8g7ePK8",
     "call": {
       "Introduction": "ミョーホンドライバー広場 →（短タイガーファイヤー発動)",
       "PostChorus": "虎火発動（トラトラなし）→跳！海鵜！舞農場！",
@@ -492,9 +492,9 @@
     },
     "calllive": {
       "Introduction": 0,
-      "PostChorus": 120,
-      "Interlude": 180,
-      "Outro": 290
+      "PostChorus": 70,
+      "Interlude": 130,
+      "Outro": 220
     },
     "callfull": {
       "Introduction": [
@@ -556,7 +556,7 @@
     "name": "恋愛桃源郷",
     "rank": "7",
     "mv": "QakWBpU0FCk",
-    "live": "je-XZkIcUI0",
+    "live": "ZO3l4fkTYhw",
     "call": {
       "Introduction": "スタンダード",
       "PreChorus": "スタンダードキャンセルスタンダード倍速",
@@ -568,12 +568,12 @@
     },
     "calllive": {
       "Introduction": 0,
-      "PreChorus": 100,
-      "Chorus": 125,
-      "PostChorus": 140,
-      "PreChorus2": 170,
-      "Interlude": 200,
-      "Outro": 250
+      "PreChorus": 30,
+      "Chorus": 48,
+      "PostChorus": 60,
+      "PreChorus2": 95,
+      "Interlude": 120,
+      "Outro": 160
     },
     "callfull": {
       "Introduction": [

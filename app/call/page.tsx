@@ -205,17 +205,24 @@ function SongsContent() {
     return foundSection ? callMapping[foundSection] : null;
   };
   const [elapsedTime, setElapsedTime] = useState(0); // 経過時間（秒）
-
+  const [manualOffset, setManualOffset] = useState(0);
   useEffect(() => {
     const startTime = Date.now(); // ページを開いた瞬間の時間を記録
-    setElapsedTime(0); // ⬅️ ここで初期化
+
     const interval = setInterval(() => {
-      setElapsedTime(Math.floor((Date.now() - startTime) / 1000)); // 経過時間を秒単位で更新
+      setElapsedTime(
+        Math.floor((Date.now() - startTime) / 1000) + manualOffset
+      ); // 🔹 manualOffset を適用
     }, 1000); // 1秒ごとに更新
 
     return () => clearInterval(interval); // アンマウント時にクリーンアップ
-  }, [now]);
-
+  }, [manualOffset]); // 🔹 manualOffset を監視して更新
+  const adjustTime = (amount: number) => {
+    setManualOffset((prev) => prev + amount);
+  };
+  // 分と秒に変換
+  const minutes = Math.floor(elapsedTime / 60);
+  const seconds = elapsedTime % 60;
   return (
     <>
       {/* <p className="absolute text-white">{now}</p> */}
@@ -297,15 +304,26 @@ function SongsContent() {
                 return item.position === currentSection;
               });
 
-              // 分と秒に変換
-              const minutes = Math.floor(elapsedTime / 60);
-              const seconds = elapsedTime % 60;
               return (
                 <>
                   <div>
                     <p>
                       時間: {minutes}分 {seconds}秒
                     </p>
+                    <div className="flex justify-center gap-4">
+                      <button
+                        className="px-4 bg-gray-700 text-white rounded"
+                        onClick={() => adjustTime(-5)}
+                      >
+                        -5秒
+                      </button>
+                      <button
+                        className="px-4 bg-gray-700 text-white rounded"
+                        onClick={() => adjustTime(5)}
+                      >
+                        +5秒
+                      </button>
+                    </div>
                     {item ? (
                       <LiveMode
                         position={
