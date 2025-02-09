@@ -35,6 +35,7 @@ export default function about() {
           <dd className="ml-[15%]">1.30:MVとライブ映像を見る機能</dd>
           <dd className="ml-[15%]">2.8:動画の使用許可取得済、全ページ公開</dd>
           <dd className="ml-[15%]">2.9:練習モード機能</dd>
+          <dd className="ml-[15%]">2.10:レイアウト調整、ライブモード</dd>
         </div>
         <div className="absolute bottom-[50px] w-full">
           <Link href="/">
