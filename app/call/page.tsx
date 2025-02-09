@@ -209,7 +209,7 @@ function SongsContent() {
   useEffect(() => {
     setElapsedTime(0);
     setManualOffset(0);
-  }, [selectedSongName]);
+  }, [now]);
   useEffect(() => {
     const startTime = Date.now(); // ページを開いた瞬間の時間を記録
     const interval = setInterval(() => {
@@ -219,7 +219,7 @@ function SongsContent() {
     }, 1000); // 1秒ごとに更新
 
     return () => clearInterval(interval); // アンマウント時にクリーンアップ
-  }, [manualOffset]);
+  }, [now, manualOffset]);
   const adjustTime = (amount: number) => {
     setManualOffset((prev) => prev + amount);
   };

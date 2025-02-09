@@ -4,7 +4,7 @@
     "name": "Colorful My Future",
     "rank": "10",
     "mv": "9Lh-5xotUeQ",
-    "live": "EDivcR-6vhM",
+    "live": "83ze8ABXHUY",
     "call": {
       "Introduction": "スタンダード(倍速)",
       "PreChorus": "チャペアペ虎火ミョーホントゥスケ人造ファイヤファイボワイパー",
@@ -15,11 +15,19 @@
     },
     "calllive": {
       "Introduction": 0,
-      "PreChorus": 100,
-      "PostChorus": 140,
-      "PreChorus2": 180,
-      "Interlude": 210,
-      "Outro": 240
+      "PreChorus": 30,
+      "PostChorus": 70,
+      "PreChorus2": 100,
+      "Interlude": 135,
+      "Outro": 195
+    },
+    "calljump": {
+      "Introduction": 12,
+      "PreChorus": 52,
+      "PostChorus": 80,
+      "PreChorus2": 117,
+      "Interlude": 145,
+      "Outro": 218
     },
     "callfull": {
       "Introduction": [
@@ -76,6 +84,7 @@
       "Interlude": 130,
       "Outro": 180
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -148,6 +157,7 @@
       "PostChorus": 50,
       "Interlude": 100
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "萌え萌えキュン、萌え萌えキュン",
@@ -188,6 +198,7 @@
       "Interlude": 120,
       "Outro": 180
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -233,6 +244,7 @@
       "Interlude": 100,
       "Outro": 160
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -277,6 +289,7 @@
       "Interlude": "旧：日アイヌ可変 新：朦月mix"
     },
     "calllive": { "Introduction": 0, "PostChorus": 60, "Interlude": 130 },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "ミョーホントゥスケ 化繊飛除去",
@@ -321,6 +334,7 @@
       "Bridge": 90,
       "Outro": 140
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイタタタイタイ",
@@ -380,6 +394,7 @@
       "Bridge": 198,
       "Outro": 220
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -446,6 +461,7 @@
       "Interlude": 120,
       "Outro": 180
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -496,6 +512,7 @@
       "Interlude": 130,
       "Outro": 220
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "ミョーホン ドライバー",
@@ -575,6 +592,7 @@
       "Interlude": 120,
       "Outro": 160
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -636,6 +654,7 @@
       "Interlude": 100,
       "Outro": 160
     },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -674,6 +693,7 @@
       "Interlude": "六花MIX"
     },
     "calllive": { "Introduction": 0, "Interlude": 60 },
+    "calljump": {},
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
