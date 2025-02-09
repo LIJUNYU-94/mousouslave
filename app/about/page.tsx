@@ -8,7 +8,7 @@ export default function about() {
       <div
         className={`${
           isScreenSmall ? "h-[800px]" : "h-[100dvh]"
-        } max-w-[500px] bg-slate-300/80 relative overflow-y-scroll scrollbar-none relative`}
+        } max-w-[500px] bg-slate-300/80 relative`}
       >
         <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
           about me
@@ -21,7 +21,6 @@ export default function about() {
             <br /> アイドル現場・mix初心者。
             <br />
             主現場：妄想slave💛 <br /> <br />
-            きみはれ💜/ハロパレ🩷/あまねみお🤍
           </p>
         </div>
         <div

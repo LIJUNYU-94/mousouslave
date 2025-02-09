@@ -59,6 +59,7 @@ export default function YouTubePlayer({
             height: "100%",
             width: "100%",
             videoId,
+
             playerVars: { autoplay: 0, controls: 1 },
             events: {
               onReady: (event: YT.PlayerEvent) => {

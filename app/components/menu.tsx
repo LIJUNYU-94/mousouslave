@@ -2,7 +2,7 @@
 import { usePathname } from "next/navigation";
 import data from "@/src/mousouslave.json";
 import { useSong } from "./SongContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 // import { SmallScreen } from "../components/smallscreen";
 const songs = data;
@@ -28,7 +28,12 @@ export default function Menu({ mode, dispatch }: MenuProps) {
   const { setSelectedSongName } = useSong();
   const pathname = usePathname();
   // const isScreenSmall = SmallScreen();
-  const handleSongSelect = (songName: string) => {
+  const handleSongSelect = (songName: string | null) => {
+    if (songName === null) {
+      setSelectedSongName(""); // 未選択状態を `""` にする
+      setActiveMenu(null);
+      return;
+    }
     setSelectedSongName(songName); // 曲をセット
     setActiveMenu(null); // メニューを閉じる
   };
@@ -65,31 +70,95 @@ export default function Menu({ mode, dispatch }: MenuProps) {
       ],
     },
   };
-
+  const [isOpen, setIsOpen] = useState(false);
   const menu = menuConfig[pathname] || menuConfig.default;
+  useEffect(() => {
+    setActiveMenu("mode"); // ページを開いたらモードメニューを開く
+  }, []);
   return (
     <>
-      <div className="relative w-full h-[65px] bg-black/80">
-        <div className="cursor-pointer absolute top-[10px] right-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-violet-500 text-white">
-          <p
-            onClick={() => handleClick("songlist")}
-            className="h-fit text-center tracking-widest"
+      <div className="relative z-[200]">
+        {/* ハンバーガーボタン */}
+        <div
+          className={`absolute top-[18px] right-[18px] w-11 h-11 ${
+            isOpen ? "border-[1.5px]" : "border-[3px]"
+          } border-white rounded-full bg-black/50 
+                   flex items-center justify-center cursor-pointer transition-all duration-300`}
+          onClick={() => {
+            setIsOpen(!isOpen);
+            setActiveMenu(null);
+            if (
+              (pathname === "/call" && mode === "practice") ||
+              (pathname === "/songs" && mode === "video")
+            ) {
+              handleSongSelect(null);
+            }
+          }}
+        >
+          {/* ハンバーガーアイコン */}
+          <div
+            className={`flex flex-col justify-between w-6 h-4 transition-all duration-300 ${
+              isOpen ? "translate-y-[2px]" : ""
+            }`}
+          >
+            <div
+              className={`w-6  bg-white rounded transition-all duration-300 ${
+                isOpen ? "rotate-45 translate-y-[6px] h-[3px]" : "h-[2px]"
+              }`}
+            ></div>
+            <div
+              className={`w-6 h-[2px] bg-white rounded transition-all duration-300 ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            ></div>
+            <div
+              className={`w-6  bg-white rounded transition-all duration-300 ${
+                isOpen ? "-rotate-45 -translate-y-[7px] h-[3px]" : "h-[2px]"
+              }`}
+            ></div>
+          </div>
+        </div>
+
+        <ul
+          className={`absolute right-[15px] w-[120px] top-[77px] h-fit flex flex-col items-center 
+                    rounded-[5px] text-xl bg-black/50 transition-all duration-500 origin-top-right z-[200]
+                    ${
+                      isOpen
+                        ? "translate-y-0 opacity-100 scale-100"
+                        : "-translate-y-10 opacity-0 scale-0"
+                    }`}
+        >
+          <li
+            className="cursor-pointer w-[120px] py-[15px] bg-slate-600 text-white text-center transition-all duration-300 "
+            onClick={() => {
+              setIsOpen(false);
+              handleClick("mode");
+            }}
+          >
+            モード選択
+          </li>
+          <li
+            className="cursor-pointer text-center w-[120px] py-[15px] bg-slate-700 text-white transition-all duration-300 "
+            onClick={() => {
+              setIsOpen(false);
+              handleClick("songlist");
+            }}
           >
             曲リスト
-          </p>
-        </div>
-        <div className="absolute top-[10px] left-[10%] h-[45px] w-[90px] flex flex-col justify-center border-2 border-white rounded-full z-10 bg-slate-700 text-white">
-          <p
-            onClick={() => handleClick("mode")}
-            className="h-fit text-center tracking-widest"
-          >
-            メニュー
-          </p>
-        </div>
+          </li>
+          <li className="relative z-[200] bg-slate-600  w-[120px] py-[15px] ">
+            <Link
+              className="block text-center z-[200] text-white whitespace-nowrap transition-all duration-300"
+              href="/"
+            >
+              TOPページ
+            </Link>
+          </li>
+        </ul>
       </div>
 
       {activeMenu === "songlist" && (
-        <div className="absolute top-[75px] right-[5%] h-[75dvh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
+        <div className="absolute top-[77px] right-[5%] h-[75dvh] w-[90%] bg-purple-700 p-4 shadow-lg rounded text-white z-20 ">
           <p className="tracking-wider">♬妄想slave曲リスト</p>
           <ul className="ml-[25%] mt-[2dvh] tracking-wider flex flex-col justify-between h-[65dvh]">
             {songlist.map((song, index) => (
@@ -105,7 +174,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
         </div>
       )}
       {activeMenu === "mode" && (
-        <div className="absolute top-[75px] left-[5%] h-[80dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
+        <div className="absolute top-[77px] left-[5%] h-[80dvh] w-[90%] bg-slate-200 p-4 shadow-lg rounded text-xl z-20">
           <p className="font-bold mb-[4dvh]">{menu.title}</p>
           <div className="flex flex-col gap-2 mt-[2dvh]">
             {menu.options.map((option, index) => (
@@ -119,6 +188,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
                 onClick={() => {
                   dispatch({ type: "SET_MODE", payload: option.value });
                   setActiveMenu(null);
+                  setActiveMenu("songlist");
                 }}
               >
                 {option.label}
@@ -128,12 +198,6 @@ export default function Menu({ mode, dispatch }: MenuProps) {
           <div
             className={`absolute bottom-[5dvh] flex justify-center gap-[80px] h-[46.5px] w-[90%]`}
           >
-            <Link
-              className=" text-center w-[80px] bg-slate-700 text-white whitespace-nowrap px-4 py-2 rounded-md"
-              href="/"
-            >
-              <p>back</p>
-            </Link>
             <p
               className="text-center w-[80px] bg-slate-700 text-white whitespace-nowrap px-4 py-2 rounded-md"
               onClick={() => setActiveMenu(null)}

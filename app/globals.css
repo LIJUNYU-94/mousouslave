@@ -27,9 +27,9 @@ body {
     @apply box-border;
   }
   html,
-  body {
+  /* body {
     @apply overflow-hidden;
-  }
+  } */
   a {
     @apply no-underline;
   }

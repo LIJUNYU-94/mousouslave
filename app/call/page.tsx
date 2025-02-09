@@ -49,17 +49,9 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
           <span className="absolute right-[0]">{isOpen ? "-" : "+"}</span>
         </p>
         {isOpen && (
-          <div
-            className="tracking-wide overflow-y-scroll max-h-[30dvh] bg-slate-600 ml-[15px] pl-[10px] py-[5px] [&::-webkit-scrollbar]:w-2
-  [&::-webkit-scrollbar-track]:bg-gray-100
-  [&::-webkit-scrollbar-thumb]:bg-gray-300
-  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-          >
+          <div className="tracking-wide h-fit bg-slate-600 ml-[15px] pl-[10px] py-[5px] ">
             {mixtext.map((text, i) => (
-              <p className="tracking-wider" key={i}>
-                {text}
-              </p>
+              <p key={i}>{text}</p>
             ))}
           </div>
         )}
@@ -69,16 +61,36 @@ function CallItem({ position, mix, mixtext, isOpen, onToggle }: CallItemProps) {
 }
 function LiveCall({ position, mixtext }: CallLiveProps) {
   return (
-    <div className="mt-[2dvh]  overflow-y-scroll scrollbar-none">
-      <p className="mt-[2dvh] text-center">{position}</p>
-      <div className="w-[80%] mx-auto text-xl tracking-wider overflow-y-scroll max-h-[120dvh] pb-[10dvh] scrollbar-none">
+    <div className="mt-[2dvh] overflow-y-scroll scrollbar-none">
+      <p className="my-[1dvh] text-center">{position}</p>
+      <div className="w-[90%] mx-auto overflow-y-scroll max-h-[120dvh] pb-[10dvh] scrollbar-none">
         {mixtext.map((text, i) => (
-          <p key={i}>{text}</p>
+          <p className="break-keep" key={i}>
+            {text}
+          </p>
         ))}
       </div>
     </div>
   );
 }
+function LiveMode({ position, mixtext }: CallLiveProps) {
+  return (
+    <div className="mt-[2dvh] overflow-y-scroll scrollbar-none">
+      <p className="my-[1dvh] text-center text-xl font-bold">{position}</p>
+      <div className="w-[90%] mx-auto overflow-y-scroll max-h-[120dvh] pb-[10dvh] scrollbar-none">
+        {mixtext.map((text, i) => (
+          <p
+            key={i}
+            className="text-4xl lg:text-5xl font-extrabold text-center leading-tight break-keep"
+          >
+            {text}
+          </p>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function SongsContent() {
   const [mode, dispatch] = useReducer(reducer, "check");
   const [currentTime, setCurrentTime] = useState(0);
@@ -192,6 +204,17 @@ function SongsContent() {
 
     return foundSection ? callMapping[foundSection] : null;
   };
+  const [elapsedTime, setElapsedTime] = useState(0); // 経過時間（秒）
+
+  useEffect(() => {
+    const startTime = Date.now(); // ページを開いた瞬間の時間を記録
+    setElapsedTime(0); // ⬅️ ここで初期化
+    const interval = setInterval(() => {
+      setElapsedTime(Math.floor((Date.now() - startTime) / 1000)); // 経過時間を秒単位で更新
+    }, 1000); // 1秒ごとに更新
+
+    return () => clearInterval(interval); // アンマウント時にクリーンアップ
+  }, [now]);
 
   return (
     <>
@@ -266,11 +289,40 @@ function SongsContent() {
                 })()}
             </>
           )}
-          {mode === "live" && (
-            <>
-              <p>LIVEモードの画面 開発中～</p>
-            </>
-          )}
+          {mode === "live" &&
+            now !== -1 &&
+            (() => {
+              const currentSection = getCurrentSongSection(elapsedTime);
+              const item = mix.find((item) => {
+                return item.position === currentSection;
+              });
+
+              // 分と秒に変換
+              const minutes = Math.floor(elapsedTime / 60);
+              const seconds = elapsedTime % 60;
+              return (
+                <>
+                  <div>
+                    <p>
+                      時間: {minutes}分 {seconds}秒
+                    </p>
+                    {item ? (
+                      <LiveMode
+                        position={
+                          Array.isArray(item.position)
+                            ? item.position
+                            : [item.position]
+                        }
+                        mixtext={item.mixtext}
+                      />
+                    ) : (
+                      <p className="text-gray-500">表示する内容がありません</p>
+                    )}
+                  </div>
+                </>
+              );
+            })()}
+
           {mode === "practicevideo" && <p> 練習動画 開発中～</p>}
         </div>
       </div>
