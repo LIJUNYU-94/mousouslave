@@ -84,7 +84,13 @@
       "Interlude": 130,
       "Outro": 180
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 0,
+      "PostChorus": 70,
+      "Verse": 90,
+      "Interlude": 140,
+      "Outro": 190
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -157,7 +163,11 @@
       "PostChorus": 50,
       "Interlude": 100
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 8,
+      "PostChorus": 70,
+      "Interlude": 120
+    },
     "callfull": {
       "Introduction": [
         "萌え萌えキュン、萌え萌えキュン",
@@ -198,7 +208,12 @@
       "Interlude": 120,
       "Outro": 180
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 5,
+      "PostChorus": 70,
+      "Interlude": 140,
+      "Outro": 192
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -244,7 +259,12 @@
       "Interlude": 100,
       "Outro": 160
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 3,
+      "PostChorus": 65,
+      "Interlude": 130,
+      "Outro": 180
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -289,7 +309,7 @@
       "Interlude": "旧：日アイヌ可変 新：朦月mix"
     },
     "calllive": { "Introduction": 0, "PostChorus": 60, "Interlude": 130 },
-    "calljump": {},
+    "calljump": { "Introduction": 0, "PostChorus": 85, "Interlude": 160 },
     "callfull": {
       "Introduction": [
         "ミョーホントゥスケ 化繊飛除去",
@@ -329,10 +349,10 @@
       "Outro": "裏スペ逆打ち裏スペキャンセルポルトガル逆打ち"
     },
     "calllive": {
-      "Introduction": 0,
-      "PostChorus": 60,
-      "Bridge": 90,
-      "Outro": 140
+      "Introduction": 8,
+      "PostChorus": 68,
+      "Bridge": 115,
+      "Outro": 168
     },
     "calljump": {},
     "callfull": {
@@ -389,12 +409,18 @@
     },
     "calllive": {
       "Introduction": 0,
-      "PostChorus": 120,
+      "PostChorus": 50,
       "Interlude": 150,
-      "Bridge": 198,
+      "Bridge": 196,
       "Outro": 220
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 5,
+      "PostChorus": 90,
+      "Interlude": 175,
+      "Bridge": 196,
+      "Outro": 235
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -458,10 +484,16 @@
       "Introduction": 0,
       "Chorus": 40,
       "PostChorus": 70,
-      "Interlude": 120,
+      "Interlude": 110,
       "Outro": 180
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 5,
+      "Chorus": 60,
+      "PostChorus": 78,
+      "Interlude": 120,
+      "Outro": 195
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -512,7 +544,12 @@
       "Interlude": 130,
       "Outro": 220
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 0,
+      "PostChorus": 100,
+      "Interlude": 170,
+      "Outro": 243
+    },
     "callfull": {
       "Introduction": [
         "ミョーホン ドライバー",
@@ -592,7 +629,15 @@
       "Interlude": 120,
       "Outro": 160
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 0,
+      "PreChorus": 37,
+      "Chorus": 45,
+      "PostChorus": 70,
+      "PreChorus2": 102,
+      "Interlude": 131,
+      "Outro": 185
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -654,7 +699,12 @@
       "Interlude": 100,
       "Outro": 160
     },
-    "calljump": {},
+    "calljump": {
+      "Introduction": 13,
+      "PostChorus": 73,
+      "Interlude": 110,
+      "Outro": 175
+    },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -693,7 +743,7 @@
       "Interlude": "六花MIX"
     },
     "calllive": { "Introduction": 0, "Interlude": 60 },
-    "calljump": {},
+    "calljump": { "Introduction": 30, "Interlude": 175 },
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
