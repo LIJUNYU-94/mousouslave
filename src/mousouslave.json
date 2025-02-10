@@ -29,6 +29,7 @@
       "Interlude": 145,
       "Outro": 218
     },
+    "jide": ["1pre.mp4", "1pre2.mpr", "1inter.mp4", "1out.mp4"],
     "callfull": {
       "Introduction": [
         "(倍速)タイガー ファイヤー サイバー ファイバー",
@@ -91,6 +92,7 @@
       "Interlude": 140,
       "Outro": 190
     },
+    "jide": ["2in.mp4", "2inter.mp4", "2out.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -168,6 +170,7 @@
       "PostChorus": 70,
       "Interlude": 120
     },
+    "jide": [],
     "callfull": {
       "Introduction": [
         "萌え萌えキュン、萌え萌えキュン",
@@ -214,6 +217,7 @@
       "Interlude": 140,
       "Outro": 192
     },
+    "jide": ["4out.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -265,6 +269,7 @@
       "Interlude": 130,
       "Outro": 180
     },
+    "jide": ["5inter.mp4", "5out.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -310,6 +315,7 @@
     },
     "calllive": { "Introduction": 0, "PostChorus": 60, "Interlude": 130 },
     "calljump": { "Introduction": 0, "PostChorus": 85, "Interlude": 160 },
+    "jide": [],
     "callfull": {
       "Introduction": [
         "ミョーホントゥスケ 化繊飛除去",
@@ -349,12 +355,18 @@
       "Outro": "裏スペ逆打ち裏スペキャンセルポルトガル逆打ち"
     },
     "calllive": {
+      "Introduction": 0,
+      "PostChorus": 65,
+      "Bridge": 100,
+      "Outro": 140
+    },
+    "calljump": {
       "Introduction": 8,
       "PostChorus": 68,
       "Bridge": 115,
       "Outro": 168
     },
-    "calljump": {},
+    "jide": ["7out.mp4"],
     "callfull": {
       "Introduction": [
         "タイタタタイタイ",
@@ -421,6 +433,7 @@
       "Bridge": 196,
       "Outro": 235
     },
+    "jide": ["8post.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -494,6 +507,7 @@
       "Interlude": 120,
       "Outro": 195
     },
+    "jide": ["9inter.mp4", "9out.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -550,6 +564,7 @@
       "Interlude": 170,
       "Outro": 243
     },
+    "jide": ["10in.mp4", "10post.mp4", "10inter.mp4", "10out.mp4"],
     "callfull": {
       "Introduction": [
         "ミョーホン ドライバー",
@@ -638,6 +653,7 @@
       "Interlude": 131,
       "Outro": 185
     },
+    "jide": ["11inter.mp4", "11out.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -705,6 +721,7 @@
       "Interlude": 110,
       "Outro": 175
     },
+    "jide": ["12inter.mp4"],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",
@@ -744,6 +761,7 @@
     },
     "calllive": { "Introduction": 0, "Interlude": 60 },
     "calljump": { "Introduction": 30, "Interlude": 175 },
+    "jide": [],
     "callfull": {
       "Introduction": [
         "タイガー ファイヤー サイバー ファイバー",

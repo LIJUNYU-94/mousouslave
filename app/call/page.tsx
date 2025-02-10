@@ -205,6 +205,7 @@ function SongsContent() {
     mix: mix,
     mixtext: mixtext[index] || [],
   }));
+  const videoList = now !== -1 ? data[now]?.jide || [] : [];
   const [active, setActive] = useState<number | null>(null);
   const handleToggle = (index: number) =>
     setActive((prev) => (prev === index ? null : index));
@@ -411,7 +412,42 @@ function SongsContent() {
               );
             })()}
 
-          {mode === "practicevideo" && <p> 練習動画 開発中～</p>}
+          {mode === "practicevideo" && (
+            <>
+              <p className="w-[90%] mx-auto mt-[5dvh]">
+                動画ソース： <br />
+                みんなの師匠じぃでさん <br /> X:おやじぃで(@kusocameko)
+              </p>
+              <p className="w-[90%] mx-auto my-[1dvh]">
+                本人の許可を得て掲載しています
+              </p>
+
+              <div className="flex flex-col items-center">
+                {videoList.length > 0 ? (
+                  videoList.map((video, index) => (
+                    <video key={index} className="w-[90%] my-2" controls loop>
+                      <source src={`/videos/${video}`} type="video/mp4" />
+                      お使いのブラウザは video タグをサポートしていません。
+                    </video>
+                  ))
+                ) : (
+                  <p className="text-gray-400 text-center my-4">
+                    この曲はまだコール動画がありません
+                  </p>
+                )}
+              </div>
+
+              <p className="w-[90%] mx-auto my-[2dvh]">
+                Xで見る
+                <a
+                  className=" font-bold underline text-xl"
+                  href="https://x.com/search?q=%23%E5%A6%84%E3%82%B9%E3%83%AC%E8%84%B1%E6%B3%95MIX&src=hashtag_click"
+                >
+                  #妄スレ脱法MIX
+                </a>
+              </p>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -62,7 +62,7 @@ function SongsContent() {
             {data[now]?.name || "曲を選んでください"}
           </h2>
           {mode === "lyrics" && (
-            <p className="whitespace-pre-line w-[80%] mx-auto mt-[3dvh] tracking-wider">
+            <p className="whitespace-pre-line w-[80%] mx-auto my-[3dvh] tracking-wider ">
               {lyrics}
             </p>
           )}
