@@ -19,8 +19,6 @@ export default function about() {
             22.4～日本。
             <br /> Webデザイン科 在学1年生。
             <br /> アイドル現場・mix初心者。
-            <br />
-            主現場：妄想slave💛 <br /> <br />
           </p>
         </div>
         <div
