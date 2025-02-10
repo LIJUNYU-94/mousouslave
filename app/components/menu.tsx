@@ -89,7 +89,8 @@ export default function Menu({ mode, dispatch }: MenuProps) {
             setActiveMenu(null);
             if (
               (pathname === "/call" && mode === "practice") ||
-              (pathname === "/songs" && mode === "video")
+              (pathname === "/songs" && mode === "video") ||
+              (pathname === "/call" && mode === "practicevideo")
             ) {
               handleSongSelect(null);
             }
