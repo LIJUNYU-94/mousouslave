@@ -4,7 +4,7 @@
     "name": "Colorful My Future",
     "rank": "10",
     "mv": "9Lh-5xotUeQ",
-    "live": "83ze8ABXHUY",
+    "live": "V_yA54dYNLE",
     "call": {
       "Introduction": "スタンダード(倍速)",
       "PreChorus": "チャペアペ虎火ミョーホントゥスケ人造ファイヤファイボワイパー",
@@ -198,7 +198,7 @@
     "name": "ほろ酔い君中毒",
     "rank": "13",
     "mv": "nUFWqFuQmVc",
-    "live": "XkcXItEM7S8",
+    "live": "L50yHk3C0TQ",
     "call": {
       "Introduction": "スタンダード",
       "PostChorus": "ジャパニーズ",
@@ -250,7 +250,7 @@
     "name": "めんたるのいず",
     "rank": "8",
     "mv": "ACIIxk6JpiE",
-    "live": "mzYi7lnoG2k",
+    "live": "64XCzqneTks",
     "call": {
       "Introduction": "スタンダード",
       "PostChorus": "虎火発動 ジャパニーズ",
@@ -485,7 +485,7 @@
     "name": "妄想のラビリンス",
     "rank": "2",
     "mv": "oGT29vwr9hs",
-    "live": "E2SIANV1r28",
+    "live": "xNa7vmqgnCk",
     "call": {
       "Introduction": "スタンダードワイパーまで",
       "Chorus": "意味不あいあい(ゴキあい)",
@@ -545,7 +545,7 @@
     "name": "恋のアカシ",
     "rank": "1",
     "mv": "ogya9Y-vRYk",
-    "live": "pO2n8g7ePK8",
+    "live": "yKhEHkjv9Xg",
     "call": {
       "Introduction": "ミョーホンドライバー広場 →（短タイガーファイヤー発動)",
       "PostChorus": "虎火発動（トラトラなし）→跳！海鵜！舞農場！",
@@ -625,7 +625,7 @@
     "name": "恋愛桃源郷",
     "rank": "7",
     "mv": "QakWBpU0FCk",
-    "live": "ZO3l4fkTYhw",
+    "live": "E1CyrXa_fuU",
     "call": {
       "Introduction": "スタンダード",
       "PreChorus": "スタンダードキャンセルスタンダード倍速",
@@ -638,7 +638,7 @@
     "calllive": {
       "Introduction": 0,
       "PreChorus": 30,
-      "Chorus": 48,
+      "Chorus": 49,
       "PostChorus": 60,
       "PreChorus2": 95,
       "Interlude": 120,
@@ -647,7 +647,7 @@
     "calljump": {
       "Introduction": 0,
       "PreChorus": 37,
-      "Chorus": 45,
+      "Chorus": 47,
       "PostChorus": 70,
       "PreChorus2": 102,
       "Interlude": 131,
@@ -754,7 +754,7 @@
     "name": "雪空キスシーン",
     "rank": "9",
     "mv": "o7vHG3YDBWs",
-    "live": "q9pOKL9dfCQ",
+    "live": "999jxAi8RyA",
     "call": {
       "Introduction": "スタンダード",
       "Interlude": "六花MIX"

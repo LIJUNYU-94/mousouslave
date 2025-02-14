@@ -17,7 +17,7 @@ const reducer = (state: string, action: { type: string; payload: string }) => {
 };
 function SongsContent() {
   const isScreenSmall = SmallScreen();
-  const [mode, dispatch] = useReducer(reducer, "video");
+  const [mode, dispatch] = useReducer(reducer, "lyrics");
   const { selectedSongName } = useSong();
   const lyrics = selectedSongName
     ? data.find((song) => song.name === selectedSongName)?.lyrics ||
