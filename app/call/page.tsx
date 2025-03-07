@@ -343,7 +343,7 @@ console.log(getCurrentSongSection(elapsedTime))
   {isAutoMode ? "手動モードへ切替" : "自動モードへ切替"}
 </button>
 
-                  {isAutoMode===true&&<div>
+                  {isAutoMode?(<div>
                     <p>
                       時間: {minutes}分 {seconds}秒
                     </p>
@@ -373,8 +373,8 @@ console.log(getCurrentSongSection(elapsedTime))
                     ) : (
                       <p className="text-gray-500">表示する内容がありません</p>
                     )}
-                  </div>}
-                  {isAutoMode!==true&&
+                  </div>):
+                 (
                   <div>
                      <div className="flex flex-wrap justify-center gap-2 mt-4">
         {sections.map((section) => (
@@ -383,7 +383,7 @@ console.log(getCurrentSongSection(elapsedTime))
             className={`px-4 py-2 rounded ${
               manualSection === section ? "bg-green-500 text-white" : "bg-gray-700 text-white"
             }`}
-            onClick={() =>{setManualSection(section),console.log(section)} }
+            onClick={() =>{setManualSection(section)} }
           >
             {callMapping[section]}
           </button>
@@ -401,7 +401,7 @@ console.log(getCurrentSongSection(elapsedTime))
                     ) : (
                       <p className="text-gray-500">表示する内容がありません</p>
                     )}
-                  </div>}
+                  </div>)}
                 </>
               );
             })()}
