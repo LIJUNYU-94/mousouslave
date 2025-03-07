@@ -37,7 +37,12 @@ export default function Menu({ mode, dispatch }: MenuProps) {
     setSelectedSongName(songName); // 曲をセット
     setActiveMenu(null); // メニューを閉じる
   };
-
+  // 3.7試しで追加
+  const { selectedSongName } = useSong();
+  const now = selectedSongName
+    ? data.findIndex((song) => song.name === selectedSongName)
+    : -1; // 該当する曲がなければ -1 を返す
+  // 3.7試しで追加
   type MenuConfigMap = {
     [key: string]: {
       title: string;
@@ -120,7 +125,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
           </div>
         </div>
   {/* 3.7追加、コールモードの左上にボタンを付ける*/}
-  {pathname === "/call"&&<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" className="absolute top-[15px] left-[20px]" onClick={()=>{handleSongSelect(null);handleClick("songlist");}}>
+  {pathname === "/call"&& now!==-1&&<svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" className="absolute top-[15px] left-[20px]" onClick={()=>{handleSongSelect(null);handleClick("songlist");}}>
   <path d="M3.99994 7.99997L3.29294 8.70697L2.58594 7.99997L3.29294 7.29297L3.99994 7.99997ZM8.99994 20C8.73472 20 8.48037 19.8946 8.29283 19.7071C8.10529 19.5195 7.99994 19.2652 7.99994 19C7.99994 18.7348 8.10529 18.4804 8.29283 18.2929C8.48037 18.1053 8.73472 18 8.99994 18V20ZM8.29294 13.707L3.29294 8.70697L4.70694 7.29297L9.70694 12.293L8.29294 13.707ZM3.29294 7.29297L8.29294 2.29297L9.70694 3.70697L4.70694 8.70697L3.29294 7.29297ZM3.99994 6.99997H14.4999V8.99997H3.99994V6.99997ZM14.4999 20H8.99994V18H14.4999V20ZM20.9999 13.5C20.9999 15.2239 20.3151 16.8772 19.0961 18.0962C17.8771 19.3151 16.2238 20 14.4999 20V18C15.0909 18 15.676 17.8836 16.222 17.6574C16.768 17.4313 17.2641 17.0998 17.6819 16.6819C18.0998 16.2641 18.4312 15.768 18.6574 15.222C18.8835 14.6761 18.9999 14.0909 18.9999 13.5H20.9999ZM14.4999 6.99997C16.2238 6.99997 17.8771 7.68479 19.0961 8.90377C20.3151 10.1228 20.9999 11.7761 20.9999 13.5H18.9999C18.9999 12.909 18.8835 12.3239 18.6574 11.7779C18.4312 11.2319 18.0998 10.7359 17.6819 10.318C17.2641 9.90012 16.768 9.56866 16.222 9.34251C15.676 9.11636 15.0909 8.99997 14.4999 8.99997V6.99997Z" fill="white"/>
 </svg>}
   

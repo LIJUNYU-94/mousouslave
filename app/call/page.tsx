@@ -74,72 +74,6 @@ function LiveCall({ position, mixtext }: CallLiveProps) {
   );
 }
 
-// function LiveCall({ position, mixtext }: CallLiveProps) {
-//   const { selectedSongName } = useSong();
-//   const now = selectedSongName
-//     ? data.findIndex((song) => song.name === selectedSongName)
-//     : -1;
-
-//   const calljump = data[now]?.calljump || {};
-
-//   // グローバルで YouTube プレイヤーの参照を保持
-//   const playerRef = useRef<YT.Player | null>(null);
-
-//   useEffect(() => {
-//     if (window.YT && window.YT.Player) {
-//       playerRef.current = new window.YT.Player("youtube-player", {
-//         events: {
-//           onReady: (event) => {
-//             console.log("YouTube Player is ready!");
-//             playerRef.current = event.target;
-//           },
-//         },
-//       });
-//     }
-//   }, []);
-
-//   const handleJump = () => {
-//     // `position` が配列の場合、最初の要素を取得
-//     const positionKey = Array.isArray(position) ? position[0] : position;
-
-//     // `positionKey` を `callMapping` から `calljump` に対応する英語のキーに変換
-//     const englishKey = Object.keys(callMapping).find(
-//       (key) => callMapping[key] === positionKey
-//     ) as keyof typeof calljump | undefined;
-
-//     if (englishKey && calljump[englishKey] !== undefined) {
-//       const targetTime = calljump[englishKey]; // 該当する時間を取得
-//       console.log(`Jumping to: ${targetTime}秒`);
-
-//       if (playerRef.current) {
-//         playerRef.current.seekTo(targetTime, true);
-//       } else {
-//         console.warn("YouTube Player not initialized");
-//       }
-//     } else {
-//       console.warn("No jump time found for this position");
-//     }
-//   };
-
-//   return (
-//     <div className="mt-[2dvh] overflow-y-scroll scrollbar-none">
-//       <p
-//         className="my-[1dvh] text-center cursor-pointer underline text-blue-400"
-//         onClick={handleJump}
-//       >
-//         {position}（クリックでジャンプ）
-//       </p>
-//       <div className="w-[90%] mx-auto overflow-y-scroll max-h-[120dvh] pb-[10dvh] scrollbar-none">
-//         {mixtext.map((text, i) => (
-//           <p className="break-keep" key={i}>
-//             {text}
-//           </p>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 function LiveMode({ position, mixtext }: CallLiveProps) {
   return (
     <div className="mt-[2dvh] overflow-y-scroll scrollbar-none">
@@ -167,10 +101,6 @@ function SongsContent() {
   };
 
   const { selectedSongName } = useSong();
-  // const lyrics = selectedSongName
-  //   ? data.find((song) => song.name === selectedSongName)?.lyrics ||
-  //     "歌詞が見つかりません"
-  //   : "";
   const now = selectedSongName
     ? data.findIndex((song) => song.name === selectedSongName)
     : -1; // 該当する曲がなければ -1 を返す
