@@ -5,8 +5,8 @@ import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
 import YouTubePlayer from "../components/youtubePlayer";
-import { Truculenta } from "next/font/google";
-import { DiVim } from "react-icons/di";
+// import { Truculenta } from "next/font/google";
+// import { DiVim } from "react-icons/di";
 
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
@@ -248,8 +248,8 @@ const sections = Object.keys(sectionTimes).sort(
     setManualOffset((prev) => prev + amount);
   };
   // 分と秒に変換
-  let minutes = Math.floor(elapsedTime / 60);
-  let seconds = elapsedTime % 60;
+  const minutes = Math.floor(elapsedTime / 60);
+  const seconds = elapsedTime % 60;
   return (
     <>
       {/* <p className="absolute text-white">{now}</p> */}
