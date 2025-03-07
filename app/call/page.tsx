@@ -5,6 +5,8 @@ import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
 import YouTubePlayer from "../components/youtubePlayer";
+import { Truculenta } from "next/font/google";
+import { DiVim } from "react-icons/di";
 
 const reducer = (state: string, action: { type: string; payload: string }) => {
   switch (action.type) {
@@ -183,7 +185,24 @@ function SongsContent() {
       }
     };
   }, []);
+  //3.7追加ボタン　自動手動の切り替え
+  const [isAutoMode, setIsAutoMode] = useState(true);
+  const [manualSection, setManualSection] = useState<string | null>(
+    Object.keys(callMapping)[0] || null
+  );
+  const sectionTimes: Record<string, number> = data[now]?.calllive
+  ? (Object.fromEntries(
+      Object.entries(data[now].calllive).filter(
+        ([, value]) => typeof value === "number"
+      )
+    ) as Record<string, number>)
+  : {};
 
+// セクションを時間の小さい順にソート
+const sections = Object.keys(sectionTimes).sort(
+  (a, b) => sectionTimes[a] - sectionTimes[b]
+);
+  
   const getCurrentSongSection = (currentTime: number): string | null => {
     const roundedTime = Math.floor(currentTime);
     const sectionTimes: Record<string, number> = data[now]?.calllive
@@ -202,8 +221,15 @@ function SongsContent() {
 
     return foundSection ? callMapping[foundSection] : null;
   };
+
   const [elapsedTime, setElapsedTime] = useState(0); // 経過時間（秒）
   const [manualOffset, setManualOffset] = useState(0);
+  useEffect(() => {
+    if (!isAutoMode) {
+      setManualSection(getCurrentSongSection(elapsedTime) || Object.keys(callMapping)[0] || null);
+    }
+  }, [isAutoMode]);
+  
   useEffect(() => {
     setElapsedTime(0);
     setManualOffset(0);
@@ -222,8 +248,8 @@ function SongsContent() {
     setManualOffset((prev) => prev + amount);
   };
   // 分と秒に変換
-  const minutes = Math.floor(elapsedTime / 60);
-  const seconds = elapsedTime % 60;
+  let minutes = Math.floor(elapsedTime / 60);
+  let seconds = elapsedTime % 60;
   return (
     <>
       {/* <p className="absolute text-white">{now}</p> */}
@@ -300,14 +326,24 @@ function SongsContent() {
           {mode === "live" &&
             now !== -1 &&
             (() => {
-              const currentSection = getCurrentSongSection(elapsedTime);
-              const item = mix.find((item) => {
-                return item.position === currentSection;
-              });
+              const currentSection = isAutoMode
+  ? getCurrentSongSection(elapsedTime)
+  : callMapping[manualSection||""];
+
+const item = mix.find((item) => item.position === currentSection);
+console.log("現在の manualSection:", callMapping[manualSection||""]);
+console.log(getCurrentSongSection(elapsedTime))
 
               return (
                 <>
-                  <div>
+                <button
+  className="px-4 bg-blue-600 text-white rounded"
+  onClick={() => {setIsAutoMode((prev) => !prev)}}
+>
+  {isAutoMode ? "手動モードへ切替" : "自動モードへ切替"}
+</button>
+
+                  {isAutoMode===true&&<div>
                     <p>
                       時間: {minutes}分 {seconds}秒
                     </p>
@@ -337,7 +373,35 @@ function SongsContent() {
                     ) : (
                       <p className="text-gray-500">表示する内容がありません</p>
                     )}
-                  </div>
+                  </div>}
+                  {isAutoMode!==true&&
+                  <div>
+                     <div className="flex flex-wrap justify-center gap-2 mt-4">
+        {sections.map((section) => (
+          <button
+            key={section}
+            className={`px-4 py-2 rounded ${
+              manualSection === section ? "bg-green-500 text-white" : "bg-gray-700 text-white"
+            }`}
+            onClick={() =>{setManualSection(section),console.log(section)} }
+          >
+            {callMapping[section]}
+          </button>
+        ))}
+      </div>
+                    {item ? (
+                      <LiveMode
+                        position={
+                          Array.isArray(item.position)
+                            ? item.position
+                            : [item.position]
+                        }
+                        mixtext={item.mixtext}
+                      />
+                    ) : (
+                      <p className="text-gray-500">表示する内容がありません</p>
+                    )}
+                  </div>}
                 </>
               );
             })()}

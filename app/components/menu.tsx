@@ -7,7 +7,7 @@ import Link from "next/link";
 // import { SmallScreen } from "../components/smallscreen";
 const songs = data;
 const songlist = songs
-  .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 13) //
+  .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= 14) //
   .sort((a, b) => Number(a.rank) - Number(b.rank)); // rank 昇順ソート
 // interface Song {
 //   id: number;
