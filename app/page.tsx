@@ -5,11 +5,11 @@ import { SmallScreen } from "./components/smallscreen";
 function part(x: number) {
   const data = [
     {
-      name: "オリジナル曲全13曲",
+      name: "オリジナル曲全14曲",
       classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
     },
     {
-      name: "全13曲コール",
+      name: "全14曲コール",
       classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
     },
     {
