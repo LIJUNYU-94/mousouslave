@@ -28,12 +28,11 @@ export default function about() {
         >
           <dt className="text-xl ml-[10%] font-bold pb-[1vh]">更新履歴：</dt>
           <dd className="ml-[15%]">1.20:制作開始</dd>
-          <dd className="ml-[15%]">1.21:コールチェック機能</dd>
-          <dd className="ml-[15%]">1.30:歌詞をチェック機能</dd>
-          <dd className="ml-[15%]">1.30:MVとライブ映像を見る機能</dd>
           <dd className="ml-[15%]">2.8:動画の使用許可取得済、全ページ公開</dd>
           <dd className="ml-[15%]">2.9:練習モード機能</dd>
           <dd className="ml-[15%]">2.10:レイアウト調整、ライブモード</dd>
+          <dd className="ml-[15%]">3.7:ライブモード切り替え調整</dd>
+          <dd className="ml-[15%]">3.14:新曲データ追加</dd>
         </div>
         <div className="absolute bottom-[50px] w-full">
           <Link href="/">
