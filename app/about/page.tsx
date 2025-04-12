@@ -17,7 +17,7 @@ export default function about() {
           <p className="text-2xl text-center">作者：リ グンウ</p>
           <p className="text-xl w-[80%] mx-auto pt-[5dvh]">
             22.4～日本。
-            <br /> Webデザイン科 在学1年生。
+            <br /> Webデザイン科 在学2年生。
             <br /> アイドル現場・mix初心者。
           </p>
         </div>
