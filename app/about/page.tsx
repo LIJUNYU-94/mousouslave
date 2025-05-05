@@ -33,6 +33,7 @@ export default function about() {
           <dd className="ml-[15%]">2.10:レイアウト調整、ライブモード</dd>
           <dd className="ml-[15%]">3.7:ライブモード切り替え調整</dd>
           <dd className="ml-[15%]">3.14:新曲データ追加</dd>
+          <dd className="ml-[15%]">5.5:新体制更新</dd>
         </div>
         <div className="absolute bottom-[50px] w-full">
           <Link href="/">
