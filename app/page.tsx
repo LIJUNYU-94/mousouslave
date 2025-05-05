@@ -3,30 +3,56 @@ import Link from "next/link";
 import { SmallScreen } from "./components/smallscreen";
 
 function part(x: number) {
+  // const data = [
+  //   {
+  //     name: "オリジナル曲全14曲",
+  //     classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+  //   },
+  //   {
+  //     name: "全14曲コール",
+  //     classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+  //   },
+  //   {
+  //     name: "各公式リンク",
+  //     classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+  //   },
+  //   {
+  //     name: "各非公式リンク",
+  //     classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+  //   },
+  //   {
+  //     name: "スケジュール",
+  //     classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+  //   },
+  //   {
+  //     name: "about me",
+  //     classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+  //   },
+  // ];
   const data = [
     {
       name: "オリジナル曲全14曲",
-      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+      classname: "bg-[linear-gradient(120deg,#dd3744_0%,#ff7f7f_100%)]", // 赤
     },
     {
       name: "全14曲コール",
-      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]", // 黄
     },
     {
       name: "各公式リンク",
-      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+      classname: "bg-[linear-gradient(120deg,#2e3f8f_0%,#6679c0_100%)]", // 青
     },
     {
       name: "各非公式リンク",
-      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+      classname: "bg-[linear-gradient(120deg,#c9c9d3_0%,#f0f0f5_100%)]", // 白
     },
     {
       name: "スケジュール",
-      classname: "bg-[linear-gradient(120deg,#dc143c_0%,#ff7f50_100%)]",
+      classname: "bg-[linear-gradient(120deg,#1d4c36_0%,#2e7d59_100%)]", // 緑
     },
     {
       name: "about me",
-      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]",
+      classname: "bg-[linear-gradient(120deg,#13121a_0%,#3a3a4d_100%)]", // 黒
     },
   ];
   return (

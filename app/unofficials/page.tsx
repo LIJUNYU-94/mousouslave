@@ -27,14 +27,6 @@ export default function unofficials() {
             りさちコンカフェ
           </Link>
           <Link
-            href="https://x.com/nyagonyancoo
-"
-            className="w-[60%] mx-auto whitespace-nowrap inline-flex items-center"
-          >
-            <FaSquareXTwitter />
-            りぴコンカフェ
-          </Link>
-          <Link
             href="https://x.com/SlaveDelusion
 "
             className="w-[60%] mx-auto whitespace-nowrap inline-flex items-center"
@@ -74,19 +66,20 @@ export default function unofficials() {
             <FaSquareXTwitter /> りさちをりさーち
           </Link>
           <Link
-            href="https://x.com/search?q=%23%E6%8C%87%E7%94%B0%E3%81%A8%E3%82%B5%E3%82%B7%E9%A3%B2%E3%81%BF&src=hashtag_click
-"
-            className="w-[60%] mx-auto whitespace-nowrap inline-flex items-center"
-          >
-            <FaSquareXTwitter /> 指田とサシ飲み
-          </Link>
-          <Link
             href="https://x.com/hashtag/%E3%81%AB%E3%82%83%E3%81%94%E3%81%A1%E3%82%85%E3%83%BC%E3%82%8B%E3%81%A0%E3%82%88?src=hashtag_click
 "
             className="w-[60%] mx-auto whitespace-nowrap inline-flex items-center"
           >
             <FaSquareXTwitter /> にゃごちゅーるだよ
           </Link>
+          <Link
+            href="https://x.com/search?q=%23%E9%9B%A8%E5%AE%AE%E3%81%A8%E3%81%AD%E3%82%8B%E3%81%AD%E3%82%8B%E3%81%AD%E3%82%8B%E3%81%AD&src=hashtag_click
+"
+            className="w-[60%] mx-auto whitespace-nowrap inline-flex items-center"
+          >
+            <FaSquareXTwitter /> 雨宮とねるねるねるね
+          </Link>
+
           <Link
             href="https://x.com/hashtag/%E6%B3%A5%E9%85%94slave?src=hashtag_click
 "
