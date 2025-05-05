@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BsYoutube } from "react-icons/bs";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaInstagramSquare } from "react-icons/fa";
-import { AiFillTikTok } from "react-icons/ai";
+// import { AiFillTikTok } from "react-icons/ai";
 import { HiShoppingCart } from "react-icons/hi";
 import { SmallScreen } from "../components/smallscreen";
 export default function officials() {
