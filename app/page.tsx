@@ -52,7 +52,7 @@ function part(x: number) {
     },
     {
       name: "about me",
-      classname: "bg-[linear-gradient(120deg,#13121a_0%,#3a3a4d_100%)]", // 黒
+      classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]", // 黄
     },
   ];
   return (
