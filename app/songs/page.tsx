@@ -82,7 +82,7 @@ function SongsContent() {
               </div>
               <div>
                 <p className="text-center text-xl my-[1dvh] bg-slate-200 text-black tracking-widest">
-                  ライブ映像(カメコ)
+                  ライブ映像
                 </p>
                 <div className="relative">
                   {live === "" ? (
