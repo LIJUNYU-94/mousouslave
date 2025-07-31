@@ -18,6 +18,7 @@ const reducer = (state: string, action: { type: string; payload: string }) => {
 };
 const callMapping: Record<string, string> = {
   Introduction: "開幕",
+  Versea:"1A後",
   PreChorus: "サビ前",
   Chorus: "サビ",
   PostChorus: "サビ後",
