@@ -31,11 +31,11 @@ function part(x: number) {
   // ];
   const data = [
     {
-      name: "オリジナル曲全15曲",
+      name: "オリジナル曲全14曲",
       classname: "bg-[linear-gradient(120deg,#dd3744_0%,#ff7f7f_100%)]", // 赤
     },
     {
-      name: "全15曲コール",
+      name: "全14曲コール",
       classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]", // 黄
     },
     {
