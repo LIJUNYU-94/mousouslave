@@ -31,7 +31,7 @@ function part(x: number) {
   // ];
   const data = [
     {
-      name: "オリジナル曲全14曲",
+      name: "全14曲歌詞/動画",
       classname: "bg-[linear-gradient(120deg,#dd3744_0%,#ff7f7f_100%)]", // 赤
     },
     {
@@ -40,7 +40,7 @@ function part(x: number) {
     },
     {
       name: "各公式リンク",
-      classname: "bg-[linear-gradient(120deg,#2e3f8f_0%,#6679c0_100%)]", // 青
+      classname: "bg-[linear-gradient(120deg,#1d4c36_0%,#2e7d59_100%)]", // 緑
     },
     {
       name: "各非公式リンク",
@@ -48,7 +48,7 @@ function part(x: number) {
     },
     {
       name: "スケジュール",
-      classname: "bg-[linear-gradient(120deg,#1d4c36_0%,#2e7d59_100%)]", // 緑
+      classname: "bg-[linear-gradient(120deg,#dd3744_0%,#ff7f7f_100%)]", // 赤
     },
     {
       name: "about me",

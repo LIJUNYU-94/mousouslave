@@ -10,7 +10,7 @@
       "PreChorus": "チャペアペ虎火ミョーホントゥスケ人造ファイヤファイボワイパー",
       "PostChorus": "ジャパニーズ(倍速)",
       "PreChorus2": "カラキナ除去飛ミョーホントゥスケ人造ファーマ繊維ジャスパー",
-      "Interlude": "アイヌ可変アイヌ",
+      "Interlude": "チャペタイム",
       "Outro": "裏ドイツ逆打ち"
     },
     "calllive": {
@@ -167,6 +167,7 @@
       "Interlude": "可変ジャパ極意→時折可変",
       "Outro": "闇うんちキャンセルタイ語キャンセルベトナム逆打ち"
     },
+
     "calllive": {
       "Introduction": 0,
       "Versea": 35,
@@ -176,7 +177,7 @@
       "Outro": 180
     },
     "calljump": {},
-    "jide": [],
+    "jide": ["14a.mp4", "14b.mp4"],
     "callfull": {
       "Introduction": ["タイガ ファイヤー"," タタタタ タイガー",
     "サイバ ファイバー ","ササササ サイバー",
@@ -894,7 +895,7 @@
       "Interlude": 143,
       "Outro": 205
     },
-    "jide": [],
+    "jide": ["13full.mp4"],
     "callfull": {
       "Introduction": [
         "ワ ワ ワールドカオス!",

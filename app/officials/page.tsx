@@ -53,13 +53,6 @@ export default function officials() {
             <FaSquareXTwitter /> 白石美海 公式X
           </Link>
           <Link
-            href="https://x.com/amemya___neru
-"
-            className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
-          >
-            <FaSquareXTwitter /> 雨宮ねる 公式X
-          </Link>
-          <Link
             href="https://x.com/chekisutayasan
 "
             className="w-[50%] mx-auto whitespace-nowrap inline-flex items-center"
