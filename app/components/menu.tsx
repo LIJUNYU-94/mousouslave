@@ -1,14 +1,12 @@
 "use client";
-import { usePathname } from "next/navigation";
-import data from "@/src/mousouslave.json";
+import { usePathname, useSearchParams } from "next/navigation";
+import mousouData from "@/src/mousouslave.json";
+import lisaData from "@/src/lisa.json";
 import { useSong } from "./SongContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 // import { SmallScreen } from "../components/smallscreen";
-const songs = data;
-const songlist = songs
-  .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= data.length) //
-  .sort((a, b) => Number(a.rank) - Number(b.rank)); // rank 昇順ソート
+
 // interface Song {
 //   id: number;
 //   name: string;
@@ -21,6 +19,15 @@ interface MenuProps {
   dispatch: React.Dispatch<{ type: string; payload: string }>; // ✅ `dispatch` を受け取る
 }
 export default function Menu({ mode, dispatch }: MenuProps) {
+  const searchParams = useSearchParams();
+  const appMode = searchParams.get("mode");
+  const data = appMode === "lisa" ? lisaData : mousouData;
+
+  const songs = data;
+  const songlist = songs
+    .filter((song) => Number(song.rank) >= 1 && Number(song.rank) <= data.length) //
+    .sort((a, b) => Number(a.rank) - Number(b.rank)); // rank 昇順ソート
+
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const handleClick = (menuName: string) => {
     setActiveMenu((prev) => (prev === menuName ? null : menuName)); // クリックしたボタンのメニューを開閉
@@ -175,7 +182,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
           <li className="relative z-[200] bg-slate-600  w-[120px] py-[15px] ">
             <Link
               className="block text-center z-[200] text-white whitespace-nowrap transition-all duration-300"
-              href="/"
+              href={`/?mode=${appMode}`}
             >
               TOPページ
             </Link>
@@ -185,7 +192,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
 
       {activeMenu === "songlist" && (
         <div className="absolute top-[77px] right-[5%] h-[75dvh] w-[90%] bg-[linear-gradient(140deg,#edc1f9_0%,#924fbb_100%)] p-4 shadow-lg rounded text-white z-20 ">
-          <p className="tracking-wider">♬妄想slave曲リスト</p>
+          <p className="tracking-wider">{appMode === "lisa" ? "♬指田りさ曲リスト" : "♬妄想slave曲リスト"}</p>
           <ul className="ml-[25%] mt-[2dvh] tracking-wider flex flex-col justify-between h-[65dvh]">
             {songlist.map((song, index) => (
               <li

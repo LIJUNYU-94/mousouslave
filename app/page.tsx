@@ -85,7 +85,7 @@ function part(x: number) {
 }
 export default function Home() {
   const smallscreen = SmallScreen();
-  const [mode, setMode] = useState("lisa")
+  const [mode, setMode] = useState("mousou")
   return (
     <>
       <main className="h-[100dvh] bg-slate-400/80 max-w-[500px] mx-auto">
@@ -115,10 +115,10 @@ export default function Home() {
           className={`grid gap-[0.5vh] 
             ${smallscreen ? "h-[65dvh]" : "h-[68dvh]"} ${mode === "lisa"?"grid-rows-3":"grid-rows-6"}`}
           >
-          <Link className="relative grid" href={`/songs/`}>
+          <Link className="relative grid" href={`/songs/?mode=${mode}`}>
             {mode === "lisa"? part(6) :part(0)}
           </Link>
-          <Link className="relative grid" href={`/call/`}>
+          <Link className="relative grid" href={`/call/?mode=${mode}`}>
              {mode === "lisa"? part(7) :part(1)}
           </Link>
           {mode==="mousou"&&<Link className="relative grid" href={`/officials/`}>

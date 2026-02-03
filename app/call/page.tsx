@@ -1,6 +1,8 @@
 "use client";
 import { useState, useReducer, useEffect } from "react";
-import data from "@/src/mousouslave.json";
+import mousouData from "@/src/mousouslave.json";
+import lisaData from "@/src/lisa.json";
+import { useSearchParams } from "next/navigation";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import { useSong } from "../components/SongContext";
@@ -96,6 +98,10 @@ function LiveMode({ position, mixtext }: CallLiveProps) {
 }
 
 function SongsContent() {
+  const searchParams = useSearchParams();
+  const appMode = searchParams.get("mode");
+  const data = appMode === "lisa" ? lisaData : mousouData;
+
   const [mode, dispatch] = useReducer(reducer, "check");
   const [currentTime, setCurrentTime] = useState(0);
   const handleTimeUpdate = (time: number) => {
