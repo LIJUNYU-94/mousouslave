@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { SmallScreen } from "./components/smallscreen";
 import mousouslave from "../src/mousouslave.json";
-import lisa from "../src/lisa.json";
 import { useState } from "react";
 
 function part(x: number) {
