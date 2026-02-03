@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer } from "react";
+import { useReducer, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
@@ -109,7 +109,9 @@ function SongsContent() {
 export default function Songs() {
   return (
     <SongProvider>
-      <SongsContent /> {/* ✅ 別コンポーネントで useSong() を実行 */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <SongsContent />
+      </Suspense>
     </SongProvider>
   );
 }

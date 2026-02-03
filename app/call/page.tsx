@@ -1,5 +1,5 @@
 "use client";
-import { useState, useReducer, useEffect } from "react";
+import { useState, useReducer, useEffect, Suspense } from "react";
 import mousouData from "@/src/mousouslave.json";
 import lisaData from "@/src/lisa.json";
 import { useSearchParams } from "next/navigation";
@@ -467,7 +467,9 @@ export default function call() {
 
   return (
     <SongProvider>
-      <SongsContent />
+      <Suspense fallback={<div>Loading...</div>}>
+        <SongsContent />
+      </Suspense>
     </SongProvider>
   );
 }
