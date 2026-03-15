@@ -193,7 +193,11 @@ export default function Menu({ mode, dispatch }: MenuProps) {
       {activeMenu === "songlist" && (
         <div className="absolute top-[77px] right-[5%] h-[75dvh] w-[90%] bg-[linear-gradient(140deg,#edc1f9_0%,#924fbb_100%)] p-4 shadow-lg rounded text-white z-20 ">
           <p className="tracking-wider">{appMode === "lisa" ? "♬指田りさ曲リスト" : "♬妄想slave曲リスト"}</p>
-          <ul className="ml-[25%] mt-[2dvh] tracking-wider flex flex-col justify-between h-[65dvh]">
+          <ul
+            className={`ml-[25%] mt-[2dvh] tracking-wider flex flex-col ${
+              appMode === "lisa" ? "gap-4" : "justify-between h-[65dvh]"
+            }`}
+          >
             {songlist.map((song, index) => (
               <li
                 key={song.id}
