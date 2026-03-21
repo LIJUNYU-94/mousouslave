@@ -56,7 +56,7 @@ function part(x: number) {
       name: "about me",
       classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]", // 黄
     },
-    //lisaモード
+    //risaモード
     {
       name: `歌詞/動画`,
       classname: "bg-[linear-gradient(120deg,#f0e68c_0%,#ffac16_100%)]", // 黄
@@ -90,11 +90,11 @@ export default function Home() {
       <main className="h-[100dvh] bg-slate-400/80 max-w-[500px] mx-auto">
         <div className="relative">
           <h1 className="text-4xl font-bold text-center py-[10dvh] text-white bg-[url('/header.png')] bg-cover bg-center">
-            {mode === "lisa"?"指田りさ":"妄想slave"} <br />
+            {mode === "risa"?"指田りさ":"妄想slave"} <br />
             非公式応援アプリ
           </h1>
           <button
-  onClick={() => setMode(mode === "lisa" ? "mousou" : "lisa")}
+  onClick={() => setMode(mode === "risa" ? "mousou" : "risa")}
   className="absolute bottom-4 right-4 z-10
              flex items-center gap-2
              bg-black/60 backdrop-blur-md
@@ -104,21 +104,21 @@ export default function Home() {
   <div className="w-8 h-4 bg-white/40 rounded-full relative">
     <div
       className={`absolute top-0.5 w-3 h-3 bg-white rounded-full transition-all
-        ${mode === "lisa" ? "right-0.5" : "left-0.5"}`}
+        ${mode === "risa" ? "right-0.5" : "left-0.5"}`}
     />
   </div>
-  <span className={mode === "lisa" ? "font-bold" : "opacity-50"}>りさち</span>
+  <span className={mode === "risa" ? "font-bold" : "opacity-50"}>りさち</span>
 </button>
         </div>
         <div
           className={`grid gap-[0.5vh] 
-            ${smallscreen ? "h-[65dvh]" : "h-[68dvh]"} ${mode === "lisa"?"grid-rows-3":"grid-rows-6"}`}
+            ${smallscreen ? "h-[65dvh]" : "h-[68dvh]"} ${mode === "risa"?"grid-rows-3":"grid-rows-6"}`}
           >
           <Link className="relative grid" href={`/songs/?mode=${mode}`}>
-            {mode === "lisa"? part(6) :part(0)}
+            {mode === "risa"? part(6) :part(0)}
           </Link>
           <Link className="relative grid" href={`/call/?mode=${mode}`}>
-             {mode === "lisa"? part(7) :part(1)}
+             {mode === "risa"? part(7) :part(1)}
           </Link>
           {mode==="mousou"&&<Link className="relative grid" href={`/officials/`}>
             {part(2)}
@@ -126,10 +126,10 @@ export default function Home() {
           {mode === "mousou"&&<Link className="relative grid" href={`/unofficials/`}>
             {part(3)}
           </Link>}
-          <Link className="relative grid" href={mode === "lisa"
+          <Link className="relative grid" href={mode === "risa"
               ? "http://timetr.ee/p/risa_0305_"
               : "http://timetr.ee/p/mousouslave"}>
-             {mode === "lisa"? part(8) :part(4)}
+             {mode === "risa"? part(8) :part(4)}
           </Link>
           {mode === "mousou" &&<Link className="relative grid" href={`/about/`}>
             {part(5)}

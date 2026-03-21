@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useSearchParams } from "next/navigation";
 import mousouData from "@/src/mousouslave.json";
-import lisaData from "@/src/lisa.json";
+import risaData from "@/src/risa.json";
 import { useSong } from "./SongContext";
 import { useState, useEffect } from "react";
 import Link from "next/link";
@@ -21,7 +21,7 @@ interface MenuProps {
 export default function Menu({ mode, dispatch }: MenuProps) {
   const searchParams = useSearchParams();
   const appMode = searchParams.get("mode");
-  const data = appMode === "lisa" ? lisaData : mousouData;
+  const data = appMode === "risa" ? risaData : mousouData;
 
   const songs = data;
   const songlist = songs
@@ -192,10 +192,10 @@ export default function Menu({ mode, dispatch }: MenuProps) {
 
       {activeMenu === "songlist" && (
         <div className="absolute top-[77px] right-[5%] h-[75dvh] w-[90%] bg-[linear-gradient(140deg,#edc1f9_0%,#924fbb_100%)] p-4 shadow-lg rounded text-white z-20 ">
-          <p className="tracking-wider">{appMode === "lisa" ? "♬指田りさ曲リスト" : "♬妄想slave曲リスト"}</p>
+          <p className="tracking-wider">{appMode === "risa" ? "♬指田りさ曲リスト" : "♬妄想slave曲リスト"}</p>
           <ul
             className={`ml-[25%] mt-[2dvh] tracking-wider flex flex-col ${
-              appMode === "lisa" ? "gap-4" : "justify-between h-[65dvh]"
+              appMode === "risa" ? "gap-4" : "justify-between h-[65dvh]"
             }`}
           >
             {songlist.map((song, index) => (

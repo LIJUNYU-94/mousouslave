@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import Menu from "../components/menu";
 import { SongProvider } from "../components/SongContext";
 import mousouData from "../../src/mousouslave.json";
-import lisaData from "../../src/lisa.json";
+import risaData from "../../src/risa.json";
 import { useSong } from "../components/SongContext";
 import YoutubeEmbed from "../components/youtubeEmbed";
 import { SmallScreen } from "../components/smallscreen";
@@ -20,7 +20,7 @@ const reducer = (state: string, action: { type: string; payload: string }) => {
 function SongsContent() {
   const searchParams = useSearchParams();
   const appMode = searchParams.get("mode");
-  const data = appMode === "lisa" ? lisaData : mousouData;
+  const data = appMode === "risa" ? risaData : mousouData;
 
   const isScreenSmall = SmallScreen();
   const [mode, dispatch] = useReducer(reducer, "lyrics");
