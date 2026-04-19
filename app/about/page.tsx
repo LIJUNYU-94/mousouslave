@@ -14,11 +14,10 @@ export default function about() {
           about me
         </h1>
         <div className=" py-[3dvh] flex flex-col text-left">
-          <p className="text-2xl text-center">作者：リ グンウ</p>
+          <p className="text-2xl text-center">制作者：リ グンウ</p>
           <p className="text-xl w-[80%] mx-auto pt-[5dvh]">
-            22.4～日本。
-            <br /> Webデザイン科 在学2年生。
-            <br /> アイドル現場・mix初心者。
+            22.4～日本
+            <br /> 社会人1年目
           </p>
         </div>
         <div
@@ -27,14 +26,12 @@ export default function about() {
           }`}
         >
           <dt className="text-xl ml-[10%] font-bold pb-[1vh]">更新履歴：</dt>
-          <dd className="ml-[15%]">1.20:制作開始</dd>
-          <dd className="ml-[15%]">2.8:動画の使用許可取得済、全ページ公開</dd>
-          <dd className="ml-[15%]">2.9:練習モード機能</dd>
-          <dd className="ml-[15%]">2.10:レイアウト調整、ライブモード</dd>
-          <dd className="ml-[15%]">3.7:ライブモード切り替え調整</dd>
-          <dd className="ml-[15%]">3.14:新曲データ追加</dd>
-          <dd className="ml-[15%]">5.5:新体制更新</dd>
-          <dd className="ml-[15%]">8.25:新曲更新、レイアウト調整</dd>
+          <dd className="ml-[15%]">25.1.20:制作開始</dd>
+          <dd className="ml-[15%]">25.2.8:動画の使用許可取得済、全ページ公開</dd>
+          <dd className="ml-[15%]">25.3.14:新曲「宴日和」追加</dd>
+          <dd className="ml-[15%]">25.5.5:新体制更新</dd>
+          <dd className="ml-[15%]">26.2.3:りさちソロモード追加</dd>
+          <dd className="ml-[15%]">26.3.16:新曲「恋をした堕天使」追加</dd>
         </div>
         <div className="absolute bottom-[50px] w-full">
           <Link href="/">

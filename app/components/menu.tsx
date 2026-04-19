@@ -68,7 +68,7 @@ export default function Menu({ mode, dispatch }: MenuProps) {
     "/call": {
       title: "⚙️コール表示モード",
       options: [
-        { label: "全文モード", value: "check" },
+        { label: "一覧モード", value: "check" },
         { label: "練習モード", value: "practice" },
         { label: "LIVEモード", value: "live" },
         { label: "練習動画", value: "practicevideo" },
