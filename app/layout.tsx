@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
@@ -38,7 +39,8 @@ export default function RootLayout({
         className={`${notoSansJP.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-            <Analytics />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
