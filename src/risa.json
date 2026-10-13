@@ -125,8 +125,18 @@
       "Interlude": "修造ショート",
       "Outro": "西南欧可変3連"
     },
-    "calllive": {},
-    "calljump": {},
+    "calllive": {
+      "Introduction": 0,
+      "PostChorus": 70,
+      "Interlude": 135,
+      "Outro": 170
+    },
+    "calljump": {
+      "Introduction": 0,
+      "PostChorus": 80,
+      "Interlude": 145,
+      "Outro": 185
+    },
     "jide": [],
     "callfull": {
       "Introduction": [
